@@ -301,7 +301,26 @@ footer .scallops { background: radial-gradient(circle at 14px 18px, var(--sage) 
   section[data-view].on { animation: rise 0.25s ease-out; }
   @keyframes rise { from { transform: translateY(6px); } to { transform: none; } }
 }
+
+/* Newsletter pop-up */
+.nl-pop { position: fixed; right: 20px; bottom: 20px; z-index: 50; width: min(380px, calc(100vw - 24px)); background: var(--blush); color: var(--ink); border-radius: 22px; padding: 22px 20px 18px; box-shadow: 0 14px 40px rgba(45,58,71,0.22); border: 3px solid var(--paper); text-align: center; transform: translateY(130%); opacity: 0; transition: transform 0.45s ease, opacity 0.3s ease; }
+.nl-pop.show { transform: none; opacity: 1; }
+.nl-pop[hidden] { display: none; }
+.nl-pop h2 { font-size: 1.3rem; margin: 0 28px 6px; }
+.nl-pop > p { margin: 0 0 12px; font-size: 0.95rem; }
+.nl-pop .nl-form { gap: 8px; }
+.nl-pop .nl-choices { flex-direction: column; align-items: flex-start; gap: 6px; margin-bottom: 2px; text-align: left; }
+.nl-pop .nl-form input[type=email] { flex-basis: 100%; max-width: none; }
+.nl-pop .btn { width: 100%; justify-content: center; }
+.pop-x { position: absolute; top: 10px; right: 12px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: var(--paper); color: var(--ink); font: 800 1.1rem var(--font-body); cursor: pointer; line-height: 1; }
+.pop-later { background: none; border: 0; color: var(--ink-soft); font: 700 0.85rem var(--font-body); text-decoration: underline; cursor: pointer; margin-top: 4px; }
+.pop-doodle { position: absolute; left: 14px; top: -18px; width: 40px; height: 40px; }
+@media (max-width: 520px) { .nl-pop { right: 12px; bottom: 12px; } }
+@media (prefers-reduced-motion: reduce) { .nl-pop { transition: none; } }
 </style>
+<!-- Visitor stats: GoatCounter (cookie-free, no personal data). Pages are counted on each hash change. -->
+<script>window.goatcounter = { no_onload: true };</script>
+<script data-goatcounter="https://theticketstubdiaries.goatcounter.com/count" async src="https://gc.zgo.at/count.js" onload="window.trackView && trackView()"></script>
 </head>
 <body>
 
@@ -599,6 +618,29 @@ footer .scallops { background: radial-gradient(circle at 14px 18px, var(--sage) 
   </div>
 </footer>
 
+<!-- Newsletter pop-up (shown once per visitor) -->
+<aside class="nl-pop" id="nl-pop" role="dialog" aria-labelledby="pop-head" hidden>
+  <svg class="d pop-doodle" aria-hidden="true" style="fill:var(--butter)"><use href="#d-ticket"/></svg>
+  <button class="pop-x" type="button" data-tl="popClose" aria-label="Close">&times;</button>
+  <h2 id="pop-head" data-t="popHead">Psst... want the theatre news?</h2>
+  <p data-t="popText">A monthly London roundup and my new reviews, straight to your inbox. Pick one or both.</p>
+  <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="ns-form nl-form" novalidate>
+    <input type="hidden" name="form-name" value="newsletter">
+    <input type="hidden" name="language" value="en">
+    <p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+    <fieldset class="nl-choices">
+      <legend class="visually-hidden" data-t="nlChoose">Choose your emails</legend>
+      <label><input type="checkbox" name="monthly-roundup" value="yes" checked> <span data-t="nlMonthly">Monthly theatre roundup</span></label>
+      <label><input type="checkbox" name="new-reviews" value="yes" checked> <span data-t="nlReviews">New reviews as they're posted</span></label>
+    </fieldset>
+    <label class="visually-hidden" for="pop-email" data-t="fEmail">Email</label>
+    <input id="pop-email" type="email" name="email" required autocomplete="email" data-tp="fEmailPh" placeholder="Your email address">
+    <button class="btn" type="submit" data-t="nlBtn">Sign me up</button>
+    <p class="form-msg" role="status"></p>
+  </form>
+  <button class="pop-later" type="button" data-t="popLater">No thanks</button>
+</aside>
+
 <script>
 /* ---------- CONTENT: edit these lists to update the site ---------- */
 
@@ -888,7 +930,7 @@ const T = {
     starring: "Starring", finalWeek: "Final week", seenIt: "I've seen it", onMyList: "On my list",
     noneClosing: "Nothing closing in the next two months.", noneSoon: "Nothing announced yet.",
     navContact: "Contact", nlHead: "Get the Ticket Stub Diaries in your inbox", nlText: "Pick what you'd like: a monthly London theatre roundup (what's opening, what's closing, cast changes and big-name castings), a note whenever I post a new review, or both. No spam, and you can unsubscribe any time.", nlChoose: "Choose your emails", nlMonthly: "Monthly theatre roundup", nlReviews: "New reviews as they're posted", nlPickOne: "Pick at least one of the two emails.", nlBtn: "Sign me up", fEmailPh: "Your email address",
-    nlThanks: "You're on the list! Thank you.", ctEyebrow: "Contact", ctHead: "Say hello", ctIntro: "Questions, recommendation requests, or press and PR invitations: I'd love to hear from you.",
+    nlThanks: "You're on the list! Thank you.", popHead: "Psst... want the theatre news?", popText: "A monthly London roundup and my new reviews, straight to your inbox. Pick one or both.", popLater: "No thanks", popClose: "Close", ctEyebrow: "Contact", ctHead: "Say hello", ctIntro: "Questions, recommendation requests, or press and PR invitations: I'd love to hear from you.",
     fName: "Your name", fEmail: "Email", fReason: "What's it about?", fMessage: "Message", rGeneral: "A general question", rPick: "Help me pick a show", rPress: "Press and PR invitations", rOther: "Something else",
     ctPrivacy: "I'll only use your details to reply to you.", ctBtn: "Send message", ctThanks: "Thank you! Your message is on its way and I'll reply soon.",
     formInvalid: "Please fill in every field with a valid email address.", formError: "Sorry, that didn't send. Please try again in a moment.",
@@ -936,7 +978,7 @@ const T = {
     starring: "Con", finalWeek: "Última semana", seenIt: "Ya lo he visto", onMyList: "En mi lista",
     noneClosing: "Nada termina en los próximos dos meses.", noneSoon: "Todavía no hay nada anunciado.",
     navContact: "Contacto", nlHead: "Recibe The Ticket Stub Diaries en tu correo", nlText: "Elige lo que quieras: un resumen mensual del teatro en Londres (estrenos, cierres, cambios de reparto y fichajes estrella), un aviso cada vez que publique una reseña, o ambos. Sin spam, y puedes darte de baja cuando quieras.", nlChoose: "Elige tus correos", nlMonthly: "Resumen mensual de teatro", nlReviews: "Nuevas reseñas cuando las publique", nlPickOne: "Elige al menos uno de los dos correos.", nlBtn: "Apúntame", fEmailPh: "Tu correo electrónico",
-    nlThanks: "¡Ya estás en la lista! Gracias.", ctEyebrow: "Contacto", ctHead: "Escríbeme", ctIntro: "Preguntas, peticiones de recomendaciones o invitaciones de prensa y relaciones públicas: me encantará saber de ti.",
+    nlThanks: "¡Ya estás en la lista! Gracias.", popHead: "Psst... ¿quieres estar al día del teatro?", popText: "Un resumen mensual de Londres y mis nuevas reseñas, directos a tu correo. Elige uno o los dos.", popLater: "No, gracias", popClose: "Cerrar", ctEyebrow: "Contacto", ctHead: "Escríbeme", ctIntro: "Preguntas, peticiones de recomendaciones o invitaciones de prensa y relaciones públicas: me encantará saber de ti.",
     fName: "Tu nombre", fEmail: "Correo electrónico", fReason: "¿De qué se trata?", fMessage: "Mensaje", rGeneral: "Una pregunta general", rPick: "Ayúdame a elegir un espectáculo", rPress: "Prensa y relaciones públicas", rOther: "Otra cosa",
     ctPrivacy: "Solo usaré tus datos para responderte.", ctBtn: "Enviar mensaje", ctThanks: "¡Gracias! Tu mensaje está en camino y te responderé pronto.",
     formInvalid: "Rellena todos los campos con un correo electrónico válido.", formError: "Lo siento, no se ha enviado. Vuelve a intentarlo en un momento.",
@@ -985,7 +1027,7 @@ const T = {
     starring: "В ролях:", finalWeek: "Последняя неделя", seenIt: "Я видела", onMyList: "В моём списке",
     noneClosing: "В ближайшие два месяца ничего не закрывается.", noneSoon: "Пока ничего не объявлено.",
     navContact: "Контакты", nlHead: "The Ticket Stub Diaries на вашу почту", nlText: "Выберите, что вам интересно: ежемесячный обзор лондонских театров (премьеры, закрытия, смены состава и звёздные кастинги), письмо о каждой новой рецензии или и то, и другое. Без спама, отписаться можно в любой момент.", nlChoose: "Выберите рассылку", nlMonthly: "Ежемесячный театральный обзор", nlReviews: "Новые рецензии сразу после публикации", nlPickOne: "Выберите хотя бы одну рассылку.", nlBtn: "Подписаться", fEmailPh: "Ваш email",
-    nlThanks: "Вы в списке! Спасибо.", ctEyebrow: "Контакты", ctHead: "Напишите мне", ctIntro: "Вопросы, просьбы что-нибудь посоветовать или приглашения от прессы и PR: буду рада вашему письму.",
+    nlThanks: "Вы в списке! Спасибо.", popHead: "Пс... хотите быть в курсе театральных новостей?", popText: "Ежемесячный обзор лондонских театров и мои новые рецензии прямо на вашу почту. Выберите одно или оба.", popLater: "Нет, спасибо", popClose: "Закрыть", ctEyebrow: "Контакты", ctHead: "Напишите мне", ctIntro: "Вопросы, просьбы что-нибудь посоветовать или приглашения от прессы и PR: буду рада вашему письму.",
     fName: "Ваше имя", fEmail: "Email", fReason: "О чём письмо?", fMessage: "Сообщение", rGeneral: "Общий вопрос", rPick: "Помогите выбрать спектакль", rPress: "Пресса и PR", rOther: "Другое",
     ctPrivacy: "Я использую ваши данные только для ответа вам.", ctBtn: "Отправить", ctThanks: "Спасибо! Сообщение отправлено, я скоро отвечу.",
     formInvalid: "Пожалуйста, заполните все поля и укажите правильный email.", formError: "Извините, не получилось отправить. Попробуйте ещё раз чуть позже.",
@@ -1045,6 +1087,7 @@ function applyLang() {
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-t]").forEach(el => { const v = t[el.dataset.t]; if (typeof v === "string") el.textContent = v; });
   document.querySelectorAll("[data-tp]").forEach(el => { el.placeholder = t[el.dataset.tp]; });
+  document.querySelectorAll("[data-tl]").forEach(el => { el.setAttribute("aria-label", t[el.dataset.tl]); });
   document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
   $(".translate-note").hidden = !t.enNote;
   renderLog(); renderWish(); renderWhatsOn(); renderReviews(); renderQuiz(); renderLondonNote(); renderPicks(); renderMoods();
@@ -1065,8 +1108,21 @@ function route() {
   const navKey = v === "review-template" ? "reviews" : v;
   document.querySelectorAll("nav a").forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + navKey));
   window.scrollTo(0, 0);
+  trackView();
 }
 window.addEventListener("hashchange", route);
+
+/* Visitor stats (GoatCounter): count each page of the site as its own path */
+function trackView() {
+  const gc = window.goatcounter;
+  if (!gc || !gc.count) return;
+  const v = location.hash.slice(1) || "home";
+  gc.count({ path: "/" + v, title: document.title });
+}
+function trackEvent(name) {
+  const gc = window.goatcounter;
+  if (gc && gc.count) gc.count({ path: name, title: name, event: true });
+}
 
 /* Log */
 function renderLog() {
@@ -1278,10 +1334,42 @@ document.querySelectorAll("form.ns-form").forEach(f => f.addEventListener("submi
     if (!r.ok) throw new Error(r.status);
     f.reset();
     msg.textContent = f.name === "newsletter" ? t.nlThanks : t.ctThanks; msg.className = "form-msg ok";
+    if (f.name === "newsletter") {
+      try { localStorage.setItem("nlPop", "signed"); } catch (e2) {}
+      trackEvent(f.closest("#nl-pop") ? "newsletter-signup-popup" : "newsletter-signup-home");
+      if (f.closest("#nl-pop")) setTimeout(closePop, 2200);
+    } else trackEvent("contact-message");
   } catch (err) {
     msg.textContent = t.formError; msg.className = "form-msg err";
   } finally { btn.disabled = false; }
 }));
+
+/* Newsletter pop-up: appears once, after 25 seconds or half a page of scrolling */
+const pop = $("#nl-pop");
+function popSeen() { try { return !!localStorage.getItem("nlPop"); } catch (e) { return true; } }
+function openPop() {
+  const v = location.hash.slice(1);
+  if (popSeen() || v === "contact" || !pop.hidden) return;
+  pop.hidden = false;
+  requestAnimationFrame(() => requestAnimationFrame(() => pop.classList.add("show")));
+  try { localStorage.setItem("nlPop", "shown"); } catch (e) {}
+  trackEvent("newsletter-popup-shown");
+}
+function closePop() {
+  pop.classList.remove("show");
+  setTimeout(() => { pop.hidden = true; }, 450);
+}
+pop.querySelector(".pop-x").addEventListener("click", closePop);
+pop.querySelector(".pop-later").addEventListener("click", closePop);
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !pop.hidden) closePop(); });
+if (!popSeen()) {
+  const timer = setTimeout(openPop, 25000);
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    if (h > 400 && scrollY / h > 0.5) { clearTimeout(timer); removeEventListener("scroll", onScroll); openPop(); }
+  };
+  addEventListener("scroll", onScroll, { passive: true });
+}
 
 applyLang();
 route();
