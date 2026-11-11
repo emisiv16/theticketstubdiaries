@@ -43,7 +43,7 @@ PAGES = [
      "New to musicals? Answer five quick questions and get three West End shows to try first, including family-friendly picks for kids and the best shows for sceptics."),
     ("log", "/log/",
      "Every Musical and Play I've Seen: 100+ Performances | The Ticket Stub Diaries",
-     "The Log: every musical and play I've seen since I was about 10, in London's West End, Madrid, Moscow and New York, and how many times."),
+     "The Log: every musical and play I've seen since I was about 10, in London's West End, Manchester, Madrid, Moscow and New York, and how many times."),
     ("about", "/about/",
      "About Emiliya | The Ticket Stub Diaries",
      "I'm Emiliya: a trained dancer and actor who has seen over 100 theatre performances, writing honest reviews of London musicals and plays in English, Spanish and Russian."),
