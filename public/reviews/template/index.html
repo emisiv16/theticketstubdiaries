@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review template | The Ticket Stub Diaries</title>
+<meta name="description" content="How reviews on The Ticket Stub Diaries are laid out.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://theticketstubdiaries.com/reviews/template/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#A9B7C6">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Ticket Stub Diaries">
+<meta property="og:title" content="Review template | The Ticket Stub Diaries">
+<meta property="og:description" content="How reviews on The Ticket Stub Diaries are laid out.">
+<meta property="og:url" content="https://theticketstubdiaries.com/reviews/template/">
+<meta property="og:image" content="https://theticketstubdiaries.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Ticket Stub Diaries: pastel theatre doodles of masks, a ticket and music notes">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<script>(function(){var m={home:"/",log:"/log/",reviews:"/reviews/","review-template":"/reviews/template/","whats-on":"/whats-on/",start:"/where-to-start/",about:"/about/",contact:"/contact/"};var h=location.hash.slice(1);if(m[h])location.replace(m[h]);})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://theticketstubdiaries.com/"}, {"@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://theticketstubdiaries.com/reviews/"}, {"@type": "ListItem", "position": 3, "name": "Review template", "item": "https://theticketstubdiaries.com/reviews/template/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&amp;family=Nunito:wght@400;600;700;800&amp;family=Caveat:wght@600&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: a pastel playbill. Cream paper, curtain-scallop header, bands of colour like theatre tiers, hand-drawn theatre doodles in the margins, ticket-stub Log. */
+  --cream: #FFF7E6;
+  --paper: #FFFDF8;
+  --blush: #F7C8D3;
+  --rose: #B46A72;
+  --rose-ink: #8E4752;
+  --sage: #A8B58A;
+  --sage-soft: #E3E8D3;
+  --sky: #A9B7C6;
+  --sky-soft: #DFE6EE;
+  --butter: #F6E3A1;
+  --ink: #2D3A47;
+  --ink-soft: #5B6672;
+  --font-display: "Yeseva One", Georgia, "Times New Roman", serif;
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-hand: "Caveat", "Comic Sans MS", cursive;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--cream); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+a { color: var(--rose-ink); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--rose); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.12; text-wrap: balance; margin: 0; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+svg.d { fill: none; stroke: var(--ink); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Marquee bar */
+.marquee { background: var(--blush); overflow: hidden; white-space: nowrap; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); }
+.marquee-track { display: inline-flex; align-items: center; gap: 14px; padding: 8px 0; }
+.marquee-track svg.mq-star { width: 10px; height: 10px; fill: var(--rose); stroke: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .marquee-track { animation: scroll 140s linear infinite; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+}
+
+/* Header with curtain scallops */
+header { background: var(--paper); position: relative; }
+.topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 18px; padding-bottom: 16px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: var(--font-display); font-size: 1.5rem; line-height: 1; }
+.brand em { font-family: var(--font-hand); font-style: normal; color: var(--rose); font-size: 1.45rem; }
+.brand svg { width: 34px; height: 34px; }
+.langs { display: flex; gap: 4px; background: var(--sky-soft); border-radius: 999px; padding: 4px; }
+.langs button { background: none; border: 0; color: var(--ink); font: 800 0.75rem var(--font-body); letter-spacing: 0.08em; padding: 6px 11px; border-radius: 999px; cursor: pointer; }
+.langs button[aria-pressed="true"] { background: var(--ink); color: var(--cream); }
+nav.band { background: var(--sky); }
+nav .wrap { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-top: 10px; padding-bottom: 10px; }
+nav a { flex: none; color: var(--ink); text-decoration: none; font-weight: 800; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
+nav a.active { background: var(--cream); }
+.scallops { height: 18px; background: radial-gradient(circle at 14px 0, var(--sky) 13px, transparent 14px) 0 0 / 28px 18px repeat-x; }
+
+main { padding: 28px 0 72px; }
+section[data-view] { display: none; }
+section[data-view].on { display: block; }
+.eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-ink); font-weight: 800; margin-bottom: 10px; }
+.lede { color: var(--ink-soft); max-width: 60ch; margin: 14px 0 0; font-size: 1.05rem; }
+.page-head { position: relative; padding: 12px 0 8px; }
+.page-title { font-size: clamp(2.2rem, 6vw, 3.2rem); }
+.page-head svg.d { position: absolute; right: 4px; top: 0; width: 70px; height: 70px; }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; cursor: pointer; font: 800 0.78rem var(--font-body); letter-spacing: 0.14em; text-transform: uppercase; padding: 13px 22px; border-radius: 999px; border: 0; background: var(--ink); color: var(--cream); }
+.btn.blush { background: var(--blush); color: var(--ink); }
+.btn.sage { background: var(--sage); color: var(--ink); }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+
+/* Hero */
+.hero { position: relative; text-align: center; padding: 34px 0 20px; }
+.hero h1 { font-size: clamp(2.1rem, 6.4vw, 3.9rem); max-width: 17ch; margin: 0 auto; }
+.hero h1 .hl { background: linear-gradient(transparent 58%, var(--blush) 58%); }
+.hero .lede { margin: 18px auto 0; }
+.hero .btn-row { justify-content: center; }
+.doodle { position: absolute; pointer-events: none; }
+.doodle svg { width: 100%; height: 100%; display: block; }
+.hero .dl1 { left: 0; top: 10px; width: 92px; height: 92px; transform: rotate(-12deg); }
+.hero .dl2 { right: 6px; top: 0; width: 80px; height: 80px; transform: rotate(10deg); }
+.hero .dl3 { left: 6%; bottom: 0; width: 58px; height: 58px; }
+.hero .dl4 { right: 9%; bottom: 14px; width: 54px; height: 54px; transform: rotate(14deg); }
+.hero .dl5 { left: 18%; top: -6px; width: 30px; height: 30px; }
+
+/* Stats as round badges */
+.stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin-top: 30px; }
+.stat { width: 128px; height: 128px; border-radius: 50%; display: grid; place-content: center; text-align: center; }
+.stat:nth-child(1) { background: var(--blush); }
+.stat:nth-child(2) { background: var(--sage-soft); }
+.stat:nth-child(3) { background: var(--butter); }
+.stat b { font-family: var(--font-display); font-weight: 400; font-size: 2.2rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 4px; }
+
+.home-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 22px; margin-top: 48px; align-items: start; }
+.panel { background: var(--paper); border-radius: 22px; padding: 24px; position: relative; }
+.panel h2 { font-size: 1.6rem; margin-bottom: 10px; }
+.panel p { color: var(--ink-soft); margin: 0 0 16px; }
+.curve { display: block; width: 150px; height: 46px; margin: -6px auto 2px; }
+.curve text { font: 800 11px var(--font-body); letter-spacing: 3px; text-transform: uppercase; fill: var(--rose-ink); }
+.latest h2 { text-align: center; }
+.quiz-panel { background: var(--sage); overflow: hidden; }
+.quiz-panel p { color: var(--ink); }
+.quiz-panel .doodle { right: -8px; bottom: -6px; width: 96px; height: 96px; transform: rotate(-10deg); }
+.quiz-panel .hand { font-family: var(--font-hand); font-size: 1.5rem; color: var(--ink); margin: 0 0 4px; line-height: 1; }
+
+/* Review cards */
+.review-card { display: grid; gap: 4px; text-decoration: none; color: var(--ink); padding: 16px 0; border-top: 2px dashed var(--blush); }
+.review-card:first-of-type { border-top: 0; padding-top: 4px; }
+.review-card h3 { font-size: 1.3rem; }
+.review-card .meta { color: var(--ink-soft); font-size: 0.9rem; }
+.stars { color: var(--rose); letter-spacing: 2px; font-size: 1rem; }
+.stars .off { color: var(--blush); }
+.stars .half { background: linear-gradient(90deg, var(--rose) 50%, var(--blush) 50%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.chip { display: inline-block; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: var(--cream); color: var(--ink); }
+.chip.ex { background: var(--butter); }
+
+/* Log */
+.notice { margin-top: 20px; padding: 12px 16px; background: var(--butter); border-radius: 14px; font-size: 0.92rem; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.controls input, .controls select { background: var(--paper); color: var(--ink); border: 2px solid var(--sky); border-radius: 999px; font: 600 0.95rem var(--font-body); padding: 10px 16px; }
+.controls input { flex: 1 1 220px; min-width: 0; }
+.log-summary { color: var(--ink-soft); font-size: 0.9rem; font-weight: 700; margin: 18px 0 12px; font-variant-numeric: tabular-nums; }
+.stubs { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.stub { --c: var(--blush); display: grid; grid-template-columns: 1fr auto; background: var(--c); border-radius: 14px; position: relative; }
+.stub:nth-child(4n+2) { --c: var(--sage-soft); }
+.stub:nth-child(4n+3) { --c: var(--sky-soft); }
+.stub:nth-child(4n+4) { --c: var(--butter); }
+.stub .main { padding: 14px 16px; min-width: 0; }
+.stub h3 { font-size: 1.15rem; }
+.stub .where { color: var(--ink-soft); font-size: 0.85rem; font-weight: 600; }
+.stub .note { font-family: var(--font-hand); font-size: 1.15rem; line-height: 1.2; color: var(--rose-ink); }
+.stub .row2 { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; }
+.stub .count { display: grid; place-items: center; text-align: center; padding: 10px 14px; border-left: 2px dashed rgba(45, 58, 71, 0.3); min-width: 74px; }
+.stub .count b { font-family: var(--font-display); font-weight: 400; font-size: 1.8rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.stub .count span { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; }
+.stub::before, .stub::after { content: ""; position: absolute; right: 66px; width: 16px; height: 16px; border-radius: 50%; background: var(--cream); }
+.stub::before { top: -8px; }
+.stub::after { bottom: -8px; }
+.empty { color: var(--ink-soft); padding: 20px 0; }
+
+/* Review page */
+.review { max-width: 68ch; background: var(--paper); border-radius: 22px; padding: 28px; }
+.review h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
+.verdict { font-family: var(--font-hand); font-size: 1.7rem; line-height: 1.2; color: var(--rose-ink); margin: 14px 0 8px; }
+.review-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin: 20px 0; padding: 14px; background: var(--sky-soft); border-radius: 14px; }
+.review-facts div span { display: block; font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-soft); }
+.review h2 { font-size: 1.35rem; margin: 26px 0 6px; }
+.review p { margin: 0 0 12px; }
+.placeholder { color: var(--ink-soft); font-style: italic; }
+.see-if { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px; }
+.see-if .panel { background: var(--blush); padding: 18px; }
+.see-if .panel + .panel { background: var(--sage-soft); }
+.see-if .panel h3 { font-size: 1.1rem; margin-bottom: 4px; }
+
+/* Quiz */
+.translate-note { margin-top: 14px; font-size: 0.9rem; color: var(--ink-soft); }
+.quiz { display: grid; gap: 16px; margin-top: 26px; }
+fieldset { border: 0; border-radius: 22px; padding: 20px; margin: 0; background: var(--paper); }
+fieldset:nth-of-type(1) { background: var(--blush); }
+fieldset:nth-of-type(2) { background: var(--sky-soft); }
+fieldset:nth-of-type(3) { background: var(--sage-soft); }
+fieldset:nth-of-type(4) { background: var(--butter); }
+fieldset:nth-of-type(5) { background: var(--blush); }
+legend { float: left; width: 100%; font-family: var(--font-display); font-size: 1.35rem; padding: 0; margin-bottom: 12px; }
+legend small { display: block; font-family: var(--font-body); color: var(--rose-ink); font-weight: 800; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 4px; }
+.opts { clear: both; display: flex; flex-wrap: wrap; gap: 8px; }
+.opts label { cursor: pointer; }
+.opts input { position: absolute; opacity: 0; pointer-events: none; }
+.opts span { display: inline-block; padding: 10px 16px; border-radius: 999px; background: var(--paper); color: var(--ink); font-weight: 700; font-size: 0.95rem; }
+.opts input:checked + span { background: var(--ink); color: var(--cream); }
+.opts input:focus-visible + span { outline: 3px solid var(--rose); outline-offset: 2px; }
+.quiz-msg { color: var(--rose-ink); font-weight: 700; font-size: 0.9rem; min-height: 1.4em; margin: 0; }
+.results { margin-top: 34px; }
+.results h2 { font-size: 1.9rem; margin-bottom: 16px; text-align: center; }
+.picks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.pick { background: var(--paper); border-radius: 22px; padding: 22px 18px 18px; display: grid; gap: 8px; align-content: start; border-top: 14px solid var(--blush); }
+.pick:nth-child(2) { border-top-color: var(--sage); }
+.pick:nth-child(3) { border-top-color: var(--sky); }
+.pick .rank { font-family: var(--font-hand); color: var(--rose-ink); font-size: 1.35rem; line-height: 1; }
+.pick h3 { font-size: 1.4rem; }
+.pick p { margin: 0; color: var(--ink-soft); font-size: 0.93rem; }
+.pick .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.pick .chip { background: var(--cream); }
+.browse { margin-top: 52px; }
+.browse h2 { font-size: 1.9rem; text-align: center; }
+.moods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+.mood h3 { font-size: 1.35rem; margin-bottom: 8px; }
+.mood-laugh { background: var(--butter); }
+.mood-cry { background: var(--sky-soft); }
+.mood-both { background: var(--blush); }
+.moods ul { list-style: none; margin: 0; padding: 0; }
+.moods li { padding: 8px 0; border-top: 2px dashed rgba(45, 58, 71, 0.15); }
+.moods li:first-child { border-top: 0; }
+.moods li b { font-weight: 800; }
+.moods li small { display: block; color: var(--ink-soft); }
+
+.my-note { font-family: var(--font-hand); font-size: 1.25rem; line-height: 1.2; color: var(--rose-ink) !important; }
+.my-picks-wrap { margin-top: 52px; text-align: center; }
+.my-picks-wrap h2 { font-size: 1.9rem; }
+.my-picks { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-top: 18px; text-align: left; }
+.mp { background: var(--paper); border-radius: 20px; padding: 18px; display: grid; gap: 8px; align-content: start; border: 2px dashed var(--blush); }
+.mp-top { display: flex; justify-content: space-between; align-items: start; gap: 8px; }
+.mp h3 { font-size: 1.2rem; }
+.mp p { margin: 0; font-family: var(--font-hand); font-size: 1.3rem; line-height: 1.2; color: var(--rose-ink); }
+.mp .chip { justify-self: start; }
+.chip.on { background: var(--sage); }
+.chip.off { background: var(--sky-soft); color: var(--ink-soft); }
+.london-note { margin-top: 10px; font-size: 0.9rem; font-weight: 700; color: var(--ink-soft); }
+
+.wish { margin-top: 48px; }
+.wish h2 { font-size: 1.9rem; }
+.wish-list { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.wish-list li { display: inline-flex; align-items: center; gap: 8px; background: var(--paper); border: 2px dashed var(--sky); border-radius: 999px; padding: 8px 14px; }
+.wish-name { font-weight: 700; }
+
+.wo-block { margin-top: 36px; }
+.wo-block h2 { font-size: 1.8rem; }
+.wo-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.wo-head select { background: var(--paper); color: var(--ink); border: 2px solid var(--sky); border-radius: 999px; font: 600 0.95rem var(--font-body); padding: 8px 14px; }
+.wo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 16px; }
+.wo-card { background: var(--paper); border-radius: 18px; padding: 16px 18px; display: grid; gap: 4px; align-content: start; border-left: 8px solid var(--sky); }
+.wo-closing .wo-card { border-left-color: var(--rose); background: #FDEEF1; }
+.wo-soon .wo-card { border-left-color: var(--sage); }
+.wo-card h3 { font-size: 1.2rem; }
+.wo-venue { color: var(--ink-soft); font-size: 0.88rem; font-weight: 600; }
+.wo-when { font-weight: 800; font-size: 0.92rem; }
+.wo-closing .wo-when { color: var(--rose-ink); }
+.wo-stars { font-family: var(--font-hand); font-size: 1.2rem; line-height: 1.2; color: var(--rose-ink); }
+.wo-card .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.chip.hot { background: var(--rose); color: var(--paper); }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.newsletter { margin-top: 22px; background: var(--blush); text-align: center; overflow: hidden; }
+.newsletter p { color: var(--ink); max-width: 52ch; margin: 0 auto 16px; }
+.nl-hand { font-family: var(--font-hand); line-height: 1; margin: 0 0 2px !important; font-size: 1.7rem; color: var(--rose-ink) !important; }
+.nl-doodle { position: absolute; right: 18px; top: 14px; width: 40px; height: 40px; }
+.nl-form { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.nl-form input[type=email] { flex: 1 1 240px; max-width: 360px; }
+.nl-choices { flex-basis: 100%; border: 0; padding: 0; margin: 0 0 4px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; }
+.nl-choices label { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; cursor: pointer; }
+.ns-form .nl-choices input { width: 20px; height: 20px; accent-color: var(--ink); padding: 0; }
+.ns-form input, .ns-form select, .ns-form textarea { background: var(--paper); color: var(--ink); border: 2px solid var(--sky); border-radius: 14px; font: 600 1rem var(--font-body); padding: 11px 14px; width: 100%; }
+.nl-form input { border-radius: 999px; }
+.ns-form .btn:disabled { opacity: 0.6; }
+.form-msg { flex-basis: 100%; margin: 4px 0 0; font-weight: 700; min-height: 1.4em; }
+.form-msg.ok { color: var(--ink); }
+.form-msg.err { color: var(--rose-ink); }
+.contact-form { max-width: 620px; margin-top: 22px; display: grid; gap: 14px; }
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 800; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.privacy { margin: 0; font-size: 0.88rem; color: var(--ink-soft); }
+.contact-form .btn { justify-self: start; }
+
+/* About */
+.about { max-width: 64ch; }
+.about p { font-size: 1.05rem; }
+.about .sign { font-family: var(--font-hand); font-size: 2rem; color: var(--rose); margin-top: 8px; }
+
+/* Footer */
+footer { background: var(--sage); color: var(--ink); position: relative; }
+footer .scallops { background: radial-gradient(circle at 14px 18px, var(--sage) 13px, transparent 14px) 0 0 / 28px 18px repeat-x; background-color: var(--cream); }
+.foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding-top: 22px; padding-bottom: 36px; }
+.foot a { color: var(--ink); font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem; }
+.foot .sign { font-family: var(--font-hand); font-size: 2rem; line-height: 1; }
+.foot p { margin: 4px 0 0; font-size: 0.85rem; max-width: 52ch; }
+.foot .dl { display: flex; gap: 12px; }
+.foot .dl svg { width: 44px; height: 44px; }
+
+@media (max-width: 760px) {
+  .home-grid, .picks, .moods, .see-if { grid-template-columns: 1fr; }
+  .hero .dl1, .hero .dl2 { width: 60px; height: 60px; }
+  .hero .dl3, .hero .dl4, .hero .dl5 { display: none; }
+  .hero { padding-top: 70px; }
+  .stat { width: 104px; height: 104px; }
+  .stat b { font-size: 1.8rem; }
+  .page-head svg.d { width: 52px; height: 52px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  section[data-view].on { animation: rise 0.25s ease-out; }
+  @keyframes rise { from { transform: translateY(6px); } to { transform: none; } }
+}
+
+/* Newsletter pop-up */
+.nl-pop { position: fixed; right: 20px; bottom: 20px; z-index: 50; width: min(380px, calc(100vw - 24px)); background: var(--blush); color: var(--ink); border-radius: 22px; padding: 22px 20px 18px; box-shadow: 0 14px 40px rgba(45,58,71,0.22); border: 3px solid var(--paper); text-align: center; transform: translateY(130%); opacity: 0; transition: transform 0.45s ease, opacity 0.3s ease; }
+.nl-pop.show { transform: none; opacity: 1; }
+.nl-pop[hidden] { display: none; }
+.nl-pop h2 { font-size: 1.3rem; margin: 0 28px 6px; }
+.nl-pop > p { margin: 0 0 12px; font-size: 0.95rem; }
+.nl-pop .nl-form { gap: 8px; }
+.nl-pop .nl-choices { flex-direction: column; align-items: flex-start; gap: 6px; margin-bottom: 2px; text-align: left; }
+.nl-pop .nl-form input[type=email] { flex-basis: 100%; max-width: none; }
+.nl-pop .btn { width: 100%; justify-content: center; }
+.pop-x { position: absolute; top: 10px; right: 12px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: var(--paper); color: var(--ink); font: 800 1.1rem var(--font-body); cursor: pointer; line-height: 1; }
+.pop-later { background: none; border: 0; color: var(--ink-soft); font: 700 0.85rem var(--font-body); text-decoration: underline; cursor: pointer; margin-top: 4px; }
+.pop-doodle { position: absolute; left: 14px; top: -18px; width: 40px; height: 40px; }
+@media (max-width: 520px) { .nl-pop { right: 12px; bottom: 12px; } }
+@media (prefers-reduced-motion: reduce) { .nl-pop { transition: none; } }
+</style>
+<!-- Visitor stats: GoatCounter (cookie-free, no personal data). Pages are counted on each hash change. -->
+<script>window.goatcounter = { no_onload: true };</script>
+<script data-goatcounter="https://theticketstubdiaries.goatcounter.com/count" async="" src="/count.js" onload="window.trackView &amp;&amp; trackView()"></script>
+</head>
+<body data-page="review-template">
+
+<!-- Doodle library -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="d-happy" viewBox="0 0 64 64"><path d="M10 12 Q32 2 54 12 Q57 40 32 58 Q7 40 10 12Z"></path><path d="M18 26 q6 -6 12 0 M34 26 q6 -6 12 0"></path><path d="M20 38 q12 12 24 0"></path></symbol>
+    <symbol id="d-sad" viewBox="0 0 64 64"><path d="M10 12 Q32 2 54 12 Q57 40 32 58 Q7 40 10 12Z"></path><path d="M18 24 q6 6 12 0 M34 24 q6 6 12 0"></path><path d="M20 46 q12 -12 24 0"></path><path d="M22 30 q-1 5 0 7"></path></symbol>
+    <symbol id="d-note" viewBox="0 0 64 64"><ellipse cx="20" cy="48" rx="9" ry="7"></ellipse><path d="M29 48 V10 q14 4 16 18"></path></symbol>
+    <symbol id="d-notes" viewBox="0 0 64 64"><ellipse cx="16" cy="48" rx="8" ry="6"></ellipse><ellipse cx="46" cy="42" rx="8" ry="6"></ellipse><path d="M24 48 V14 L54 8 V42 M24 22 L54 16"></path></symbol>
+    <symbol id="d-star" viewBox="0 0 64 64"><path d="M32 5 L40 23 L59 25 L45 38 L49 58 L32 48 L15 58 L19 38 L5 25 L24 23Z"></path></symbol>
+    <symbol id="d-sparkle" viewBox="0 0 64 64"><path d="M32 4 C34 26 38 30 60 32 C38 34 34 38 32 60 C30 38 26 34 4 32 C26 30 30 26 32 4Z"></path></symbol>
+    <symbol id="d-ticket" viewBox="0 0 80 48"><path d="M6 6 H74 V18 a6 6 0 0 0 0 12 V42 H6 V30 a6 6 0 0 0 0 -12Z"></path><path d="M56 8 V40" stroke-dasharray="3 5"></path><path d="M16 18 H44 M16 26 H38 M16 34 H30"></path></symbol>
+    <symbol id="d-curtain" viewBox="0 0 64 64"><path d="M4 8 H60"></path><path d="M6 8 q2 30 -2 50 h14 q-8 -20 10 -34 q-10 -6 -10 -16"></path><path d="M58 8 q-2 30 2 50 h-14 q8 -20 -10 -34 q10 -6 10 -16"></path><path d="M4 8 q7 8 14 0 q7 8 14 0 q7 8 14 0 q7 8 14 0"></path></symbol>
+    <symbol id="d-squiggle" viewBox="0 0 120 40"><path d="M4 20 q12 -18 24 0 t24 0 t24 0 t24 0 t16 -6"></path></symbol>
+    <symbol id="d-mic" viewBox="0 0 64 64"><rect x="22" y="6" width="20" height="30" rx="10"></rect><path d="M14 30 q0 14 18 14 q18 0 18 -14 M32 44 V58 M22 58 H42"></path></symbol>
+  </defs>
+</svg>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee-track"><span>Guys and Dolls</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Six</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Tribute to Dalida!</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Clueless</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Devil Wears Prada</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Great Gatsby</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Operation Mincemeat</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>If/Then</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Mean Girls</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Next to Normal</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Chicago</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Frozen</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Annie</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>A Strange Loop</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Crazy for You</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Rodgers &amp; Hammerstein's Cinderella</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Great British Bake Off Musical</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Wonderland in Alice</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Bugsy Malone</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Newsies</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>42 Balloons</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Cabaret</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Connections by Rhys Wilkinson</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Heathers</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Diva: Live from Hell</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Secret Garden</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Treason</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Millennials</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>101 Dalmatians</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Pretty Woman</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Back to the Future</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Come From Away</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Bonnie and Clyde</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Grease</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Dear Evan Hansen</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Matilda</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Everybody's Talking About Jamie</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Waitress</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>An American in Paris</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Mary Poppins</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Sound of Music</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Book of Mormon</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Anything Goes</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Lion King</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Charlie and the Chocolate Factory</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Hamilton</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Kinky Boots</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>&amp; Juliet</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Wicked</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Chess</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Anastasia</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Little Shop of Horrors</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Вальс Бостон</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>42nd Street</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Percy Jackson and the Lightning Thief</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Much Ado About Nothing</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Stranger Things: The First Shadow</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Mousetrap</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Life of Pi</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Seagull</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>2:22 A Ghost Story</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Cruise</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>A Christmas Carol</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Glass Menagerie</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Woman in Black</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Lion, the Witch and the Wardrobe</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Fifth Step</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Witness for the Prosecution</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Guys and Dolls</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Six</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Tribute to Dalida!</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Clueless</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Devil Wears Prada</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Great Gatsby</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Operation Mincemeat</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>If/Then</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Mean Girls</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Next to Normal</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Chicago</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Frozen</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Annie</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>A Strange Loop</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Crazy for You</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Rodgers &amp; Hammerstein's Cinderella</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Great British Bake Off Musical</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Wonderland in Alice</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Bugsy Malone</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Newsies</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>42 Balloons</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Cabaret</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Connections by Rhys Wilkinson</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Heathers</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Diva: Live from Hell</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Secret Garden</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Treason</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Millennials</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>101 Dalmatians</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Pretty Woman</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Back to the Future</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Come From Away</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Bonnie and Clyde</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Grease</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Dear Evan Hansen</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Matilda</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Everybody's Talking About Jamie</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Waitress</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>An American in Paris</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Mary Poppins</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Sound of Music</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Book of Mormon</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Anything Goes</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Lion King</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Charlie and the Chocolate Factory</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Hamilton</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Kinky Boots</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>&amp; Juliet</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Wicked</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Chess</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Anastasia</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Little Shop of Horrors</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Вальс Бостон</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>42nd Street</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Percy Jackson and the Lightning Thief</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Much Ado About Nothing</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Stranger Things: The First Shadow</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Mousetrap</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Life of Pi</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Seagull</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>2:22 A Ghost Story</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Cruise</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>A Christmas Carol</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Glass Menagerie</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Woman in Black</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Lion, the Witch and the Wardrobe</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>The Fifth Step</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg><span>Witness for the Prosecution</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"></use></svg></div></div>
+<header>
+  <div class="wrap topbar">
+    <a class="brand" href="/">
+      <svg class="d" viewBox="0 0 80 48" style="fill:var(--blush);width:44px"><use href="#d-ticket"></use></svg>
+      <span>The Ticket Stub <em>Diaries</em></span>
+    </a>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+    </div>
+  </div>
+  <nav class="band" aria-label="Main">
+    <div class="wrap">
+      <a href="/" data-t="navHome">Home</a>
+      <a href="/log/" data-t="navLog">The Log</a>
+      <a href="/reviews/" data-t="navReviews">Reviews</a>
+      <a href="/whats-on/" data-t="navWhatsOn">What's on</a>
+      <a href="/where-to-start/" data-t="navStart">Where do I start?</a>
+      <a href="/about/" data-t="navAbout">About</a>
+      <a href="/contact/" data-t="navContact">Contact</a>
+    </div>
+  </nav>
+  <div class="scallops" aria-hidden="true"></div>
+</header>
+
+<main class="wrap">
+
+  <!-- HOME -->
+
+  <!-- LOG -->
+
+  <!-- REVIEWS -->
+
+  <!-- REVIEW TEMPLATE -->
+  <section data-view="review-template" class="on">
+    <article class="review" lang="en">
+      <p><a href="/reviews/">← All reviews</a></p>
+      <div class="eyebrow">Review template <span class="chip ex">Example layout</span></div>
+      <h1>[Show title]</h1>
+      <p class="verdict">[One-line verdict: the sentence you'd text a friend on the way out.]</p>
+      <div class="stars" aria-label="Rating: 4 out of 5">★★★★<span class="off">★</span></div>
+      <div class="review-facts">
+        <div><span>Venue</span>[Theatre, city]</div>
+        <div><span>Seen</span>[Date]</div>
+        <div><span>Seat</span>[e.g. Dress circle, row C]</div>
+        <div><span>Times seen</span>[1]</div>
+      </div>
+      <h2>What it's about</h2>
+      <p class="placeholder">Two or three sentences of plot. No major spoilers.</p>
+      <h2>The performances</h2>
+      <p class="placeholder">Who stood out and why. Name the understudy or swing if one went on.</p>
+      <h2>The music</h2>
+      <p class="placeholder">The numbers you'll still be humming, and any that dragged.</p>
+      <h2>Staging and design</h2>
+      <p class="placeholder">Sets, costumes, lighting, choreography. The moment the audience gasped.</p>
+      <h2>The venue</h2>
+      <p class="placeholder">View from your seat, legroom, atmosphere, bar queues at the interval.</p>
+      <div class="see-if">
+        <div class="panel"><h3>See it if you love…</h3><p class="placeholder">[Other shows or films it's like]</p></div>
+        <div class="panel"><h3>Maybe skip it if…</h3><p class="placeholder">[Who won't enjoy it]</p></div>
+      </div>
+      <p style="margin-top:20px"><span class="chip ex">first-timer friendly</span> <span class="chip ex">bring tissues</span></p>
+    </article>
+  </section>
+
+  <!-- WHAT'S ON -->
+
+  <!-- QUIZ -->
+
+  <!-- CONTACT -->
+
+  <!-- ABOUT -->
+
+</main>
+
+<footer>
+  <div class="scallops" aria-hidden="true"></div>
+  <div class="wrap foot">
+    <div>
+      <div class="sign">xo, Emiliya</div>
+      <p><a href="/contact/" data-t="navContact">Contact</a></p>
+      <p data-t="footer">All reviews are my own opinions. I pay for my tickets unless a review says otherwise.</p>
+    </div>
+    <div class="dl" aria-hidden="true">
+      <svg class="d" style="fill:var(--blush)"><use href="#d-happy"></use></svg>
+      <svg class="d" style="fill:var(--sky-soft)"><use href="#d-sad"></use></svg>
+      <svg class="d"><use href="#d-note"></use></svg>
+    </div>
+  </div>
+</footer>
+
+<!-- Newsletter pop-up (shown once per visitor) -->
+<aside class="nl-pop" id="nl-pop" role="dialog" aria-labelledby="pop-head" hidden="">
+  <svg class="d pop-doodle" aria-hidden="true" style="fill:var(--butter)"><use href="#d-ticket"></use></svg>
+  <button class="pop-x" type="button" data-tl="popClose" aria-label="Close">×</button>
+  <h2 id="pop-head" data-t="popHead">Don't miss a show!</h2>
+  <p data-t="popText">Every month I'll tell you which London shows are closing (so you can catch them in time), what's opening and any big cast news. Plus my new reviews, if you like.</p>
+  <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="ns-form nl-form" novalidate="">
+    <input type="hidden" name="form-name" value="newsletter">
+    <input type="hidden" name="language" value="en">
+    <p hidden=""><label>Leave this empty: <input name="bot-field"></label></p>
+    <fieldset class="nl-choices">
+      <legend class="visually-hidden" data-t="nlChoose">Choose your emails</legend>
+      <label><input type="checkbox" name="monthly-roundup" value="yes" checked=""> <span data-t="nlMonthly">Monthly theatre roundup</span></label>
+      <label><input type="checkbox" name="new-reviews" value="yes" checked=""> <span data-t="nlReviews">New reviews as they're posted</span></label>
+    </fieldset>
+    <label class="visually-hidden" for="pop-email" data-t="fEmail">Email</label>
+    <input id="pop-email" type="email" name="email" required="" autocomplete="email" data-tp="fEmailPh" placeholder="Your email address">
+    <button class="btn" type="submit" data-t="nlBtn">Sign me up</button>
+    <p class="form-msg" role="status"></p>
+  </form>
+  <button class="pop-later" type="button" data-t="popLater">No thanks</button>
+</aside>
+
+<script>
+/* ---------- CONTENT: edit these lists to update the site ---------- */
+
+// The Log. type: "musical" or "play". year and rating can be filled in later (null = not added yet).
+const L = (show, times, opts = {}) => ({ show, times, city: "London", country: "UK", type: "musical", venue: null, year: null, rating: null, note: null, review: null, ...opts });
+const MAD = { city: "Madrid", country: "Spain" }, MOS = { city: "Moscow", country: "Russia" }, NYC = { city: "New York", country: "USA" };
+const PLAY = { type: "play" };
+const LOG = [
+  L("Guys and Dolls", 1), L("Six", 1), L("Tribute to Dalida!", 1), L("Clueless", 1), L("The Devil Wears Prada", 1),
+  L("The Great Gatsby", 2), L("Operation Mincemeat", 2), L("If/Then", 1), L("Mean Girls", 1), L("Next to Normal", 1),
+  L("Chicago", 1, MAD), L("Frozen", 1), L("Annie", 1), L("A Strange Loop", 1), L("Crazy for You", 1),
+  L("Rodgers & Hammerstein's Cinderella", 1), L("The Great British Bake Off Musical", 1), L("Wonderland in Alice", 1),
+  L("Bugsy Malone", 1), L("Newsies", 1), L("42 Balloons", 1), L("Cabaret", 1), L("Connections by Rhys Wilkinson", 1),
+  L("Heathers", 2), L("Diva: Live from Hell", 4), L("The Secret Garden", 1, { note: "In concert" }),
+  L("Treason", 1, { note: "In concert" }), L("Millennials", 2), L("101 Dalmatians", 1), L("Pretty Woman", 3),
+  L("Back to the Future", 1), L("Come From Away", 2), L("Bonnie and Clyde", 1), L("Grease", 1), L("Dear Evan Hansen", 1),
+  L("Matilda", 1), L("Everybody's Talking About Jamie", 1), L("Waitress", 1), L("An American in Paris", 2),
+  L("Mary Poppins", 1), L("The Sound of Music", 1, MAD), L("The Book of Mormon", 1), L("Anything Goes", 1),
+  L("The Lion King", 6, MAD), L("The Lion King", 1), L("Charlie and the Chocolate Factory", 1), L("Hamilton", 3),
+  L("Kinky Boots", 2, { note: "Once with Johannes Radebe" }), L("Kinky Boots", 1, { note: "In concert" }),
+  L("& Juliet", 9, { note: "West End" }), L("& Juliet", 1, { ...NYC, note: "Broadway" }), L("Wicked", 2),
+  L("Chess", 1, { note: "In concert" }), L("Chess", 1, MOS), L("Anastasia", 1, MAD), L("Little Shop of Horrors", 1, MOS), L("Вальс Бостон", 1, MOS),
+  L("42nd Street", 1), L("Percy Jackson and the Lightning Thief", 1),
+  L("Much Ado About Nothing", 2, { ...PLAY, note: "With Hayley Atwell and Tom Hiddleston" }),
+  L("Stranger Things: The First Shadow", 1, PLAY), L("The Mousetrap", 1, PLAY), L("Life of Pi", 1, PLAY),
+  L("The Seagull", 1, { ...PLAY, note: "With Emilia Clarke" }), L("2:22 A Ghost Story", 1, PLAY), L("Cruise", 1, PLAY),
+  L("A Christmas Carol", 1, PLAY), L("The Glass Menagerie", 1, { ...PLAY, note: "With Amy Adams" }),
+  L("The Woman in Black", 1, PLAY), L("The Lion, the Witch and the Wardrobe", 1, PLAY), L("The Fifth Step", 1, PLAY),
+  L("Witness for the Prosecution", 1, PLAY)
+];
+
+// Reviews. Real reviews get added here with their own page.
+const REVIEWS = [{"id": "template", "title": "Review template", "meta": "How every review will look", "rating": 4, "example": true}];
+
+// Quiz and mood lists: shows from the Log that I'd recommend.
+// mood: laugh | cry | both   music: pop | classic | modern   kids: true/false   scale: big | intimate | mid
+const SHOWS = [
+  // Not seen yet: recommended by people Emiliya trusts.
+  { name: "Les Misérables", seen: false, mood: "cry", music: "classic", kids: false, scale: "big",
+    en: "Revolution, redemption and some of the best-known songs in musical theatre. Bring tissues.",
+    es: "Revolución, redención y algunas de las canciones más famosas del teatro musical. Lleva pañuelos.",
+    ru: "Революция, искупление и одни из самых известных песен в истории мюзикла. Возьмите платочки." },
+  { name: "Mamma Mia!", seen: false, mood: "laugh", music: "pop", kids: true, scale: "big",
+    en: "ABBA's greatest hits woven into a wedding on a Greek island. Pure joy.",
+    es: "Los grandes éxitos de ABBA en una boda en una isla griega. Pura alegría.",
+    ru: "Хиты ABBA и свадьба на греческом острове. Чистая радость." },
+  { name: "The Phantom of the Opera", seen: false, mood: "cry", music: "classic", kids: true, scale: "big",
+    en: "A masked genius haunts the Paris Opera. Gothic romance and a score everyone knows.",
+    es: "Un genio enmascarado acecha la Ópera de París. Romance gótico y una partitura que todo el mundo conoce.",
+    ru: "Таинственный гений в маске обитает в Парижской опере. Готическая романтика и музыка, которую знают все." },
+  { name: "Moulin Rouge!", seen: false, mood: "both", music: "pop", kids: false, scale: "big",
+    en: "Paris, love and a century of pop songs in one dazzling mash-up.",
+    es: "París, amor y un siglo de canciones pop en un popurrí deslumbrante.",
+    ru: "Париж, любовь и сто лет поп-хитов в одном ослепительном попурри." },
+  { name: "Come Alive! The Greatest Showman", seen: false, mood: "both", music: "pop", kids: true, scale: "big",
+    en: "The songs from The Greatest Showman in an immersive, circus-style show.",
+    es: "Las canciones de El gran showman en un espectáculo inmersivo de estilo circense.",
+    ru: "Песни из «Величайшего шоумена» в иммерсивном шоу в цирковом стиле." },
+  { name: "The Devil Wears Prada", mood: "laugh", music: "pop", kids: false, scale: "big",
+    en: "Andy's year working for the formidable Miranda Priestly, with songs by Elton John.",
+    es: "El año de Andy trabajando para la temible Miranda Priestly, con canciones de Elton John.",
+    ru: "Год Энди в подчинении у грозной Миранды Пристли, с песнями Элтона Джона." },
+  { name: "& Juliet", mood: "laugh", music: "pop", kids: false, scale: "big",
+    en: "What if Juliet didn't die? Shakespeare remixed with pop hits by Britney, Katy Perry and the Backstreet Boys.",
+    es: "¿Y si Julieta no muriera? Shakespeare mezclado con éxitos pop de Britney, Katy Perry y los Backstreet Boys.",
+    ru: "Что, если бы Джульетта не умерла? Шекспир под поп-хиты Бритни, Кэти Перри и Backstreet Boys." },
+  { name: "Six", mood: "laugh", music: "pop", kids: true, scale: "intimate",
+    en: "Henry VIII's six wives reimagined as a pop concert. Short, loud and brilliant fun.",
+    es: "Las seis esposas de Enrique VIII convertidas en un concierto pop. Corto, ruidoso y divertidísimo.",
+    ru: "Шесть жён Генриха VIII в формате поп-концерта. Коротко, громко и очень весело." },
+  { name: "Back to the Future", mood: "laugh", music: "pop", kids: true, scale: "big",
+    en: "Marty and Doc on stage, with a DeLorean that has to be seen to be believed.",
+    es: "Marty y Doc sobre el escenario, con un DeLorean que hay que ver para creer.",
+    ru: "Марти и Док на сцене, а DeLorean нужно увидеть своими глазами." },
+  { name: "Operation Mincemeat", mood: "laugh", music: "modern", kids: false, scale: "intimate",
+    en: "The true, absurd story of a WWII plan to fool the Nazis with a dead body. Small cast, huge laughs.",
+    es: "La historia real y absurda de un plan de la Segunda Guerra Mundial para engañar a los nazis con un cadáver. Reparto pequeño, risas enormes.",
+    ru: "Реальная и абсурдная история плана времён Второй мировой: обмануть нацистов с помощью трупа. Маленький состав, огромный смех." },
+  { name: "The Book of Mormon", mood: "laugh", music: "classic", kids: false, scale: "mid",
+    en: "Two missionaries sent to Uganda, from the creators of South Park. Very rude, very funny.",
+    es: "Dos misioneros enviados a Uganda, de los creadores de South Park. Muy irreverente y muy divertido.",
+    ru: "Два миссионера в Уганде от создателей «Южного парка». Очень дерзко и очень смешно." },
+  { name: "Charlie and the Chocolate Factory", mood: "laugh", music: "modern", kids: true, scale: "big",
+    en: "Roald Dahl's golden tickets and Willy Wonka's factory brought to life on stage.",
+    es: "Los billetes dorados de Roald Dahl y la fábrica de Willy Wonka cobran vida en el escenario.",
+    ru: "Золотые билеты Роальда Даля и фабрика Вилли Вонки оживают на сцене." },
+  { name: "Heathers", mood: "laugh", music: "pop", kids: false, scale: "intimate",
+    en: "The cult 1980s film as a darkly funny high-school musical. Catchy and wicked.",
+    es: "La película de culto de los 80 convertida en un musical de instituto con humor negro. Pegadizo y malvado.",
+    ru: "Культовый фильм 80-х в виде мюзикла о школе с чёрным юмором. Заразительно и дерзко." },
+  { name: "Chicago", mood: "laugh", music: "classic", kids: false, scale: "intimate",
+    en: "Jazz-age murderesses chasing fame in 1920s Chicago. Slick, sexy and cynical.",
+    es: "Asesinas de la era del jazz en busca de fama en el Chicago de los años 20. Elegante, sensual y cínico.",
+    ru: "Убийцы эпохи джаза в погоне за славой в Чикаго 1920-х. Стильно, чувственно и цинично." },
+  { name: "Dear Evan Hansen", mood: "cry", music: "modern", kids: false, scale: "intimate",
+    en: "An anxious teenager tells one lie after a classmate's death, and it spirals. Bring tissues.",
+    es: "Un adolescente ansioso dice una mentira tras la muerte de un compañero y todo se descontrola. Lleva pañuelos.",
+    ru: "Тревожный подросток говорит одну ложь после смерти одноклассника, и всё выходит из-под контроля. Возьмите платочки." },
+  { name: "Next to Normal", mood: "cry", music: "modern", kids: false, scale: "intimate",
+    en: "A family living with a mother's bipolar disorder, told through a rock score. Raw and powerful.",
+    es: "Una familia que convive con el trastorno bipolar de la madre, contado con música rock. Crudo y potente.",
+    ru: "Семья, живущая с биполярным расстройством матери, под рок-музыку. Остро и сильно." },
+  { name: "Cabaret", mood: "cry", music: "classic", kids: false, scale: "intimate",
+    en: "Berlin nightlife as the Nazis rise to power. Glamorous, dark and unforgettable.",
+    es: "La vida nocturna de Berlín mientras los nazis llegan al poder. Glamurosa, oscura e inolvidable.",
+    ru: "Ночной Берлин накануне прихода нацистов к власти. Гламурно, мрачно и незабываемо." },
+  { name: "Wicked", mood: "both", music: "classic", kids: true, scale: "big",
+    en: "The untold story of the witches of Oz. Huge voices, huge sets and a friendship at its heart.",
+    es: "La historia no contada de las brujas de Oz. Grandes voces, grandes decorados y una amistad en el centro.",
+    ru: "Нерассказанная история ведьм из страны Оз. Мощные голоса, роскошные декорации и дружба в центре сюжета." },
+  { name: "The Lion King", mood: "both", music: "classic", kids: true, scale: "big",
+    en: "The Disney story told with breathtaking puppetry and African-inspired music. The opening alone is worth the ticket.",
+    es: "La historia de Disney con marionetas impresionantes y música de inspiración africana. Solo el comienzo ya vale la entrada.",
+    ru: "История Disney с потрясающими куклами и африканскими мотивами в музыке. Одно начало стоит билета." },
+  { name: "Hamilton", mood: "both", music: "modern", kids: false, scale: "mid",
+    en: "America's founding fathers told through hip-hop and R&B. Fast, clever and surprisingly moving.",
+    es: "Los padres fundadores de EE. UU. contados con hip-hop y R&B. Rápido, ingenioso y sorprendentemente emotivo.",
+    ru: "История отцов-основателей США в стиле хип-хоп и R&B. Быстро, остроумно и неожиданно трогательно." },
+  { name: "Matilda", mood: "both", music: "modern", kids: true, scale: "big",
+    en: "Roald Dahl's clever girl standing up to bullies. Witty songs that adults love as much as children.",
+    es: "La niña lista de Roald Dahl que se enfrenta a los abusones. Canciones ingeniosas que gustan a adultos y niños.",
+    ru: "Умная девочка Роальда Даля даёт отпор обидчикам. Остроумные песни нравятся и взрослым, и детям." },
+  { name: "Come From Away", mood: "both", music: "modern", kids: false, scale: "intimate",
+    en: "The true story of a small Canadian town that took in 7,000 stranded passengers after 9/11. Uplifting and very human.",
+    es: "La historia real de un pueblo canadiense que acogió a 7.000 pasajeros varados tras el 11-S. Emotiva y muy humana.",
+    ru: "Реальная история канадского городка, который принял 7 000 застрявших пассажиров после 11 сентября. Светло и очень по-человечески." },
+  { name: "Kinky Boots", mood: "both", music: "pop", kids: false, scale: "big",
+    en: "A struggling Northampton shoe factory meets drag queen Lola. Cyndi Lauper songs and a big heart.",
+    es: "Una fábrica de zapatos de Northampton en apuros conoce a la drag queen Lola. Canciones de Cyndi Lauper y mucho corazón.",
+    ru: "Разоряющаяся обувная фабрика в Нортгемптоне встречает дрэг-квин Лолу. Песни Синди Лаупер и много души." },
+  { name: "Mary Poppins", mood: "both", music: "classic", kids: true, scale: "big",
+    en: "The practically perfect nanny, with the film's songs and some spectacular new numbers.",
+    es: "La niñera prácticamente perfecta, con las canciones de la película y nuevos números espectaculares.",
+    ru: "Почти идеальная няня: песни из фильма и эффектные новые номера." },
+  { name: "Frozen", mood: "both", music: "classic", kids: true, scale: "big",
+    en: "Anna, Elsa and that song, with stage magic that turns the theatre to ice.",
+    es: "Anna, Elsa y esa canción, con magia escénica que convierte el teatro en hielo.",
+    ru: "Анна, Эльза и та самая песня, а сценическая магия превращает театр в лёд." },
+  { name: "Waitress", mood: "both", music: "pop", kids: false, scale: "intimate",
+    en: "A small-town waitress bakes her way out of an unhappy marriage. Sara Bareilles' songs are gorgeous.",
+    es: "Una camarera de pueblo busca salir de un matrimonio infeliz a base de tartas. Las canciones de Sara Bareilles son preciosas.",
+    ru: "Официантка из маленького городка выпекает себе путь из несчастного брака. Песни Сары Барейлз прекрасны." },
+  { name: "Guys and Dolls", mood: "laugh", music: "classic", kids: true, scale: "mid",
+    en: "Gamblers, gangsters and the Salvation Army in Damon Runyon's New York. Pure Golden Age fun.",
+    es: "Jugadores, gánsteres y el Ejército de Salvación en el Nueva York de Damon Runyon. Pura diversión de la época dorada.",
+    ru: "Игроки, гангстеры и Армия спасения в Нью-Йорке Дэймона Раньона. Чистое веселье золотого века мюзикла." },
+  { name: "Anything Goes", mood: "laugh", music: "classic", kids: true, scale: "big",
+    en: "Cole Porter songs and showstopping tap on a 1930s ocean liner.",
+    es: "Canciones de Cole Porter y claqué espectacular en un transatlántico de los años 30.",
+    ru: "Песни Коула Портера и зажигательная чечётка на океанском лайнере 1930-х." },
+  { name: "42nd Street", mood: "laugh", music: "classic", kids: true, scale: "big",
+    en: "A chorus girl gets her big Broadway break. Dozens of tap dancers and pure razzle-dazzle.",
+    es: "Una corista consigue su gran oportunidad en Broadway. Decenas de bailarines de claqué y puro espectáculo.",
+    ru: "Девушка из кордебалета получает свой шанс на Бродвее. Десятки чечёточников и сплошной блеск." },
+  { name: "Grease", mood: "laugh", music: "pop", kids: false, scale: "big",
+    en: "Danny, Sandy and Rydell High, with all the rock 'n' roll hits from the film.",
+    es: "Danny, Sandy y el instituto Rydell, con todos los éxitos de rock and roll de la película.",
+    ru: "Дэнни, Сэнди и школа Райделл со всеми рок-н-ролльными хитами из фильма." },
+  { name: "The Sound of Music", mood: "both", music: "classic", kids: true, scale: "big",
+    en: "Maria, the von Trapps and songs everyone can sing along to.",
+    es: "María, los Von Trapp y canciones que todo el mundo puede cantar.",
+    ru: "Мария, семья фон Трапп и песни, которые знают все." },
+  { name: "Annie", mood: "both", music: "classic", kids: true, scale: "big",
+    en: "The plucky orphan with the red curls and that song about tomorrow. Made for families.",
+    es: "La valiente huérfana pelirroja y esa canción sobre el mañana. Hecha para familias.",
+    ru: "Отважная рыжая сирота и та самая песня о завтрашнем дне. Идеально для семей." }
+];
+// Wishlist: shows I want to see but haven't yet.
+const WISHLIST = [
+  { show: "West Side Story", type: "musical" }, { show: "Beetlejuice", type: "musical" }, { show: "Sweeney Todd", type: "musical" },
+  { show: "Hello, Dolly!", type: "musical" }, { show: "Les Misérables", type: "musical" }, { show: "The Phantom of the Opera", type: "musical" },
+  { show: "Hadestown", type: "musical" }, { show: "Amélie", type: "musical" }, { show: "Rent", type: "musical" },
+  { show: "Moulin Rouge!", type: "musical" }, { show: "Beauty and the Beast", type: "musical" }, { show: "In the Heights", type: "musical" },
+  { show: "Mamma Mia!", type: "musical" }, { show: "My Fair Lady", type: "musical" },
+  { show: "Legally Blonde", type: "musical", soon: { en: "Coming March 2027", es: "Llega en marzo de 2027", ru: "С марта 2027" } },
+  { show: "Harry Potter and the Cursed Child", type: "play" }
+];
+
+// What's on in London. Checked against London listings on 11 November 2026.
+// closes = confirmed final performance; closesMonth = final month only; opens = first performance. No date = open-ended run.
+// Shows move between sections automatically by date, and drop off once they close.
+const WHATS_ON = [
+  {"show": "The Lion King", "type": "musical", "venue": "Lyceum Theatre"},
+  {"show": "Hamilton", "type": "musical", "venue": "Victoria Palace Theatre"},
+  {"show": "Les Misérables", "type": "musical", "venue": "Sondheim Theatre"},
+  {"show": "Mamma Mia!", "type": "musical", "venue": "Novello Theatre"},
+  {"show": "The Phantom of the Opera", "type": "musical", "venue": "His Majesty's Theatre"},
+  {"show": "Wicked", "type": "musical", "venue": "Apollo Victoria Theatre"},
+  {"show": "Matilda", "type": "musical", "venue": "Cambridge Theatre"},
+  {"show": "Moulin Rouge!", "type": "musical", "venue": "Piccadilly Theatre"},
+  {"show": "Six", "type": "musical", "venue": "Vaudeville Theatre"},
+  {"show": "The Book of Mormon", "type": "musical", "venue": "Prince of Wales Theatre"},
+  {"show": "Cabaret", "type": "musical", "venue": "Kit Kat Club at the Playhouse"},
+  {"show": "Operation Mincemeat", "type": "musical", "venue": "Fortune Theatre"},
+  {"show": "The Devil Wears Prada", "type": "musical", "venue": "Dominion Theatre"},
+  {"show": "Hadestown", "type": "musical", "venue": "Lyric Theatre"},
+  {"show": "Oliver!", "type": "musical", "venue": "Gielgud Theatre"},
+  {"show": "Paddington The Musical", "type": "musical", "venue": "Savoy Theatre"},
+  {"show": "Sinatra The Musical", "type": "musical", "venue": "Aldwych Theatre"},
+  {"show": "Avenue Q", "type": "musical", "venue": "Shaftesbury Theatre"},
+  {"show": "Rent", "type": "musical", "venue": "Duke of York's Theatre"},
+  {"show": "Titanique", "type": "musical", "venue": "Criterion Theatre"},
+  {"show": "Come Alive! The Greatest Showman", "type": "musical", "venue": "Empress Museum"},
+  {"show": "High School Musical", "type": "musical", "venue": "Troubadour Wembley Park Theatre"},
+  {"show": "Showstopper! The Improvised Musical", "type": "musical", "venue": "Cambridge Theatre"},
+  {"show": "Beetlejuice", "type": "musical", "venue": "Prince Edward Theatre", "closes": "2027-01-02", "stars": "David Fynn, Aimie Atkinson"},
+  {"show": "Jesus Christ Superstar", "type": "musical", "venue": "Theatre Royal Drury Lane", "closes": "2027-01-09", "stars": "Sam Ryder"},
+  {"show": "Into the Woods", "type": "musical", "venue": "Noël Coward Theatre", "closes": "2027-01-09"},
+  {"show": "Million Dollar Quartet", "type": "musical", "venue": "The Arts at Marble Arch", "closesMonth": "2026-12"},
+  {"show": "The Pianist", "type": "musical", "venue": "Park Theatre", "closesMonth": "2026-11", "stars": "Daniel Krikler"},
+  {"show": "Franz & Marie", "type": "musical", "venue": "Charing Cross Theatre", "closesMonth": "2026-11"},
+  {"show": "Ceilidh", "type": "musical", "venue": "Shoreditch Town Hall", "closesMonth": "2026-11"},
+  {"show": "Harry Potter and the Cursed Child", "type": "play", "venue": "Palace Theatre", "note": "Now a one-part play"},
+  {"show": "The Mousetrap", "type": "play", "venue": "St Martin's Theatre"},
+  {"show": "The Play That Goes Wrong", "type": "play", "venue": "Duchess Theatre"},
+  {"show": "Oh, Mary!", "type": "play", "venue": "Trafalgar Theatre"},
+  {"show": "My Neighbour Totoro", "type": "play", "venue": "Gillian Lynne Theatre"},
+  {"show": "The Hunger Games: On Stage", "type": "play", "venue": "Troubadour Canary Wharf Theatre"},
+  {"show": "Paranormal Activity", "type": "play", "venue": "Ambassadors Theatre"},
+  {"show": "Julius Caesar", "type": "play", "venue": "Shakespeare's Globe"},
+  {"show": "Witness for the Prosecution", "type": "play", "venue": "London County Hall"},
+  {"show": "Hay Fever", "type": "play", "venue": "Wyndham's Theatre", "closes": "2026-12-12", "stars": "Christine Baranski, Richard E. Grant"},
+  {"show": "The Standard of Living", "type": "play", "venue": "Theatre Royal Haymarket", "closes": "2026-12-12", "stars": "Rory Kinnear, Natalia Osipova"},
+  {"show": "Stranger Things: The First Shadow", "type": "play", "venue": "Phoenix Theatre", "closes": "2026-12-27"},
+  {"show": "The Cherry Orchard", "type": "play", "venue": "Harold Pinter Theatre", "closes": "2027-01-09", "stars": "Kristin Scott Thomas, Stephen Mangan"},
+  {"show": "The Lives of Others", "type": "play", "venue": "Adelphi Theatre", "closes": "2027-01-09", "stars": "Keira Knightley, Stephen Dillane, Luke Thompson"},
+  {"show": "A Christmas Carol", "type": "play", "venue": "Old Vic", "opens": "2026-11-12"},
+  {"show": "Nine Night", "type": "play", "venue": "Kiln Theatre", "opens": "2026-11-12"},
+  {"show": "Cinderella", "type": "musical", "venue": "Lyric Hammersmith", "opens": "2026-11-14"},
+  {"show": "One Day", "type": "musical", "venue": "Garrick Theatre", "opens": "2026-11-17"},
+  {"show": "The Choir of Man", "type": "musical", "venue": "The Arts at Marble Arch", "opens": "2026-12-10"},
+  {"show": "The Animals Come to the Table", "type": "play", "venue": "Shakespeare's Globe", "opens": "2026-12-11"},
+  {"show": "Christmas Carol Goes Wrong", "type": "play", "venue": "Wyndham's Theatre", "opens": "2026-12-18"},
+  {"show": "The Seagull", "type": "play", "venue": "Shakespeare's Globe", "opens": "2027-01-15"},
+  {"show": "The Guilty", "type": "play", "venue": "Harold Pinter Theatre", "opens": "2027-01-16", "stars": "Russell Tovey"},
+  {"show": "Wild About You", "type": "musical", "venue": "Charing Cross Theatre", "opens": "2027-01-18"},
+  {"show": "Dirty Dancing", "type": "musical", "venue": "Prince Edward Theatre", "opens": "2027-01-19"},
+  {"show": "John Proctor is the Villain", "type": "play", "venue": "Wyndham's Theatre", "opens": "2027-02-02"},
+  {"show": "Billy Elliot", "type": "musical", "venue": "Adelphi Theatre", "opens": "2027-02-12"},
+  {"show": "King John", "type": "play", "venue": "Shakespeare's Globe", "opens": "2027-02-20"},
+  {"show": "The Notebook", "type": "musical", "venue": "Judi Dench Theatre", "opens": "2027-03-10"},
+  {"show": "Berlin", "type": "play", "venue": "Kiln Theatre", "opens": "2027-03-11"},
+  {"show": "Legally Blonde", "type": "musical", "venue": "London Coliseum", "opens": "2027-03-22"},
+  {"show": "Amadeus", "type": "play", "venue": "Noël Coward Theatre", "opens": "2027-04-17", "stars": "Michael Sheen"},
+  {"show": "The Traitors: Acts of Betrayal", "type": "play", "venue": "Gillian Lynne Theatre", "opens": "2027-05-11"},
+  {"show": "Miss Saigon", "type": "musical", "venue": "Prince Edward Theatre", "opens": "2027-05-13"},
+  {"show": "Charlie and the Chocolate Factory", "type": "musical", "venue": "London Coliseum", "opens": "2027-06-04"},
+  {"show": "The Truth", "type": "play", "venue": "Theatre Royal Haymarket", "opens": "2027-07-29"}
+];
+const WO_CHECKED = { en: "11 November 2026", es: "11 de noviembre de 2026", ru: "11 ноября 2026" };
+const TODAY = new Date(); TODAY.setHours(0, 0, 0, 0);
+const endOf = e => e.closes ? new Date(e.closes + "T00:00:00") : e.closesMonth ? new Date(+e.closesMonth.slice(0, 4), +e.closesMonth.slice(5, 7), 0) : null;
+const isRunning = e => (!e.opens || new Date(e.opens + "T00:00:00") <= TODAY) && (!endOf(e) || endOf(e) >= TODAY);
+
+// Running in London right now: worked out from WHATS_ON by date.
+const ON_NOW = new Set(WHATS_ON.filter(isRunning).map(e => e.show));
+const CHECKED = { en: "November 2026", es: "noviembre de 2026", ru: "ноябрь 2026" };
+
+// era: "iconic" big-name musicals vs "new" fun, fresher shows. Hamilton counts as both.
+const ICONIC = new Set(["Les Misérables", "Mamma Mia!", "The Phantom of the Opera", "Wicked", "The Lion King", "Chicago", "Cabaret", "Grease", "The Sound of Music", "Mary Poppins", "Guys and Dolls", "Anything Goes", "42nd Street", "Annie", "The Book of Mormon", "Matilda"]);
+const BOTH = new Set(["Hamilton"]);
+SHOWS.forEach(s => { s.era = BOTH.has(s.name) ? "both" : ICONIC.has(s.name) ? "iconic" : "new"; });
+
+// My tried-and-tested recommendations, in my own words. These get a boost in the quiz.
+const PICKS = [
+  { name: "Operation Mincemeat", type: "musical", sceptic: true, en: "A personal favourite, and my go-to for guys seeing their first musical.", es: "Uno de mis favoritos, y mi recomendación para chicos que van a su primer musical.", ru: "Один из моих любимых, и первый, что я советую парням, которые идут на мюзикл впервые." },
+  { name: "The Book of Mormon", type: "musical", sceptic: true, en: "My other go-to for guys seeing their first musical.", es: "Mi otra recomendación para chicos que van a su primer musical.", ru: "Ещё один мой совет для парней, впервые идущих на мюзикл." },
+  { name: "Hamilton", type: "musical", sceptic: false, en: "Another personal favourite. I've seen it three times.", es: "Otro de mis favoritos. Lo he visto tres veces.", ru: "Ещё один мой любимый мюзикл. Я видела его трижды." },
+  { name: "Wicked", type: "musical", sceptic: false, en: "Tried and tested: I've recommended this one again and again.", es: "Probado y aprobado: lo he recomendado una y otra vez.", ru: "Проверено: советую его снова и снова." },
+  { name: "The Lion King", type: "musical", sceptic: false, en: "Tried and tested: I've recommended this one again and again.", es: "Probado y aprobado: lo he recomendado una y otra vez.", ru: "Проверено: советую его снова и снова." },
+  { name: "Frozen", type: "musical", sceptic: false, en: "Tried and tested: I've recommended this one again and again.", es: "Probado y aprobado: lo he recomendado una y otra vez.", ru: "Проверено: советую его снова и снова." },
+  { name: "Matilda", type: "musical", sceptic: false, en: "A classic for kids, or for grown-ups feeling nostalgic.", es: "Un clásico para niños, o para adultos con ganas de nostalgia.", ru: "Классика для детей или для взрослых, которых тянет на ностальгию." },
+  { name: "The Devil Wears Prada", type: "musical", sceptic: false, en: "I loved it with the original cast. It's probably changed since, so check who's in it.", es: "Me encantó con el reparto original. Seguramente ha cambiado, así que mira quién actúa.", ru: "Мне очень понравилось с первым составом. Скорее всего, он уже сменился, так что проверьте, кто играет." },
+  { name: "Stranger Things: The First Shadow", type: "play", sceptic: false, en: "A play, not a musical, and it was brilliant. Especially if you love the series.", es: "Es una obra de teatro, no un musical, y fue genial. Sobre todo si te encanta la serie.", ru: "Это спектакль, а не мюзикл, и он потрясающий. Особенно если вы любите сериал." }
+];
+const PICK = Object.fromEntries(PICKS.map(p => [p.name, p]));
+
+/* ---------- TRANSLATIONS ---------- */
+const T = {
+  en: {
+    navWhatsOn: "What's on", woTitle: "What's on in London theatre", woEyebrow: "London theatre", woIntro: "What's on in London theatre right now: West End shows closing soon, what's playing, and new musicals and plays opening next.",
+    woChecked: d => `Last checked ${d}. Dates and casts change, so check the theatre's website before booking.`,
+    closingHead: "Closing soon", onHead: "On now", soonHead: "Opening soon",
+    finalPerf: d => `Final performance ${d}`, closesIn: m => `Closes ${m}`, until: d => `Until ${d}`, from: d => `From ${d}`, openRun: "Open run",
+    starring: "Starring", finalWeek: "Final week", seenIt: "I've seen it", onMyList: "On my list",
+    noneClosing: "Nothing closing in the next two months.", noneSoon: "Nothing announced yet.",
+    navContact: "Contact", nlHead: "Get the Ticket Stub Diaries in your inbox", nlText: "Pick what you'd like: a monthly London theatre roundup (which shows are closing so you can catch them in time, what's opening, cast changes and big-name castings), a note whenever I post a new review, or both. No spam, and you can unsubscribe any time.", nlChoose: "Choose your emails", nlMonthly: "Monthly theatre roundup", nlReviews: "New reviews as they're posted", nlPickOne: "Pick at least one of the two emails.", nlBtn: "Sign me up", fEmailPh: "Your email address",
+    nlThanks: "You're on the list! Thank you.", nlHand: "Don't miss a show!", popHead: "Don't miss a show!", popText: "Every month I'll tell you which London shows are closing (so you can catch them in time), what's opening and any big cast news. Plus my new reviews, if you like.", popLater: "No thanks", popClose: "Close", ctEyebrow: "Contact", ctHead: "Say hello", ctIntro: "Questions, recommendation requests, or press and PR invitations: I'd love to hear from you.",
+    fName: "Your name", fEmail: "Email", fReason: "What's it about?", fMessage: "Message", rGeneral: "A general question", rPick: "Help me pick a show", rPress: "Press and PR invitations", rOther: "Something else",
+    ctPrivacy: "I'll only use your details to reply to you.", ctBtn: "Send message", ctThanks: "Thank you! Your message is on its way and I'll reply soon.",
+    formInvalid: "Please fill in every field with a valid email address.", formError: "Sorry, that didn't send. Please try again in a moment.",
+    navHome: "Home", navLog: "The Log", navReviews: "Reviews", navStart: "Where do I start?", navAbout: "About",
+    heroEyebrow: "London musicals, plays and shows",
+    heroTitle: "Honest reviews from someone who's been to the theatre over 100 times.",
+    heroSub: "Honest reviews of West End musicals, plays and shows, in plain words. Plus what's on in London, a running log of everything I've seen, and a quiz if you don't know which musical to see first.",
+    ctaQuiz: "Find your first musical", ctaLog: "Browse the Log",
+    stat1: "performances", stat2: "productions", stat3: "cities",
+    typeAll: "Musicals and plays", typeMusicals: "Musicals", typePlays: "Plays", musical: "Musical", play: "Play",
+    nowShowing: "now showing", latest: "Latest reviews", newHead: "New to musicals?",
+    newText: "Five quick questions and you'll have three shows to try.",
+    logEyebrow: "Since age 10", logIntro: "Every musical and play I've seen, where, and how many times: over 100 performances in London, Madrid, Moscow and New York.",
+    logNotice: "Ratings, years and venues are being added bit by bit. Anything not marked otherwise was seen in London.",
+    searchPh: "Search shows or venues", allCities: "All cities",
+    sortAz: "A to Z", sortSeen: "Most seen", sortRating: "Highest rated",
+    summary: (n, p) => `${n} productions, ${p} performances`,
+    seen: "seen", notRated: "Not rated", read: "Read review", example: "Example", noResults: "Nothing matches that search.",
+    revEyebrow: "From the stalls", revIntro: "Honest reviews of West End musicals and plays: recent shows in full, plus shorter pieces from the archive.", enNote: "",
+    quizEyebrow: "For first-timers", quizIntro: "Not sure which musical to see in London? Answer five quick questions and get three West End shows to try first, including family-friendly picks if you're bringing children.",
+    q1: "What kind of night out do you want?", q1o: ["A good laugh", "A proper cry", "A bit of both"],
+    q2: "What music do you enjoy?", q2o: ["Pop and rock hits", "Big classic ballads", "Something different (folk, hip-hop, jazz)", "Not fussy"],
+    q3: "Who's coming with you?", q3o: ["Just adults", "Children are coming"],
+    q4: "Spectacle or story?", q4o: ["Big sets and wow moments", "A close-up story", "Either"],
+    q5: "An iconic musical, or something fun and new?", q5o: ["An iconic one (think Wicked or The Lion King)", "Something fun and new (think Six or Operation Mincemeat)", "Either"],
+    onNow: "On in London now", wishEyebrow: "Still to see", wishHead: "Next on my list", wishIntro: "Shows I haven't seen yet. The ones on in London now come first.", notOn: "Not on in London right now", noneOn: "Nothing on in London right now matches all of that. Try changing an answer.",
+    londonNote: d => `Picks are shows on in London right now (checked ${d}).`,
+    qLabel: "Question", submit: "Show my picks", reset: "Start again", pickAll: "Pick one answer for each question.",
+    resultsHead: "Your top three", rank: ["First choice", "Second choice", "Third choice"],
+    browseHead: "Or browse by mood", moodLaugh: "For a laugh", moodCry: "For a cry", moodBoth: "Laughs and tears",
+    r: { laugh: "Funny", cry: "Moving", both: "Laughs and tears", pop: "Pop score", classic: "Classic score", modern: "Something different", kids: "Fine for children", adults: "Best for adults", big: "Big spectacle", intimate: "Close-up story", eraIconic: "Iconic", eraNew: "Fun and new", pick: "Emiliya's pick", sceptic: "Sceptic-proof", trusted: "Trusted tip" },
+    trustedNote: "I haven't seen this one yet, but people I trust rave about it.",
+    picksEyebrow: "Tried and tested", picksHead: "My go-to recommendations",
+    aboutEyebrow: "Hello", aboutHead: "About me",
+    about1: "I'm Emiliya. I saw my first musical when I was about 10 and haven't stopped since. I'm now past 100 performances across London, Madrid, Moscow and New York.",
+    about2: "I trained as a dancer and actor, so I watch from the stalls with one eye on the craft: the choreography, the vocals, the moment a swing saves the night. And in case you're wondering how far my musical obsession goes: I wrote my IB extended essay on Hamilton.",
+    about3: "The name comes from the ticket stubs I've kept since I was little, from shows, museums and anywhere else I went, especially the pretty ones. Friends' mums kept asking me what they should see, so I started writing it down. I grew up speaking English, Spanish and Russian, so the beginner's guide is in all three.",
+    footer: "All reviews are my own opinions. I pay for my tickets unless a review says otherwise."
+  },
+  es: {
+    navWhatsOn: "En cartel", woTitle: "Qué ver en los teatros de Londres", woEyebrow: "Teatro en Londres", woIntro: "Lo que se representa en Londres ahora mismo: lo que termina pronto, lo que está en cartel y lo que llega.",
+    woChecked: d => `Última revisión: ${d}. Las fechas y los repartos cambian, así que consulta la web del teatro antes de comprar.`,
+    closingHead: "Últimas funciones", onHead: "En cartel ahora", soonHead: "Próximos estrenos",
+    finalPerf: d => `Última función: ${d}`, closesIn: m => `Termina en ${m}`, until: d => `Hasta el ${d}`, from: d => `Desde el ${d}`, openRun: "Sin fecha de cierre",
+    starring: "Con", finalWeek: "Última semana", seenIt: "Ya lo he visto", onMyList: "En mi lista",
+    noneClosing: "Nada termina en los próximos dos meses.", noneSoon: "Todavía no hay nada anunciado.",
+    navContact: "Contacto", nlHead: "Recibe The Ticket Stub Diaries en tu correo", nlText: "Elige lo que quieras: un resumen mensual del teatro en Londres (qué obras cierran para que llegues a tiempo, estrenos, cambios de reparto y fichajes estrella), un aviso cada vez que publique una reseña, o ambos. Sin spam, y puedes darte de baja cuando quieras.", nlChoose: "Elige tus correos", nlMonthly: "Resumen mensual de teatro", nlReviews: "Nuevas reseñas cuando las publique", nlPickOne: "Elige al menos uno de los dos correos.", nlBtn: "Apúntame", fEmailPh: "Tu correo electrónico",
+    nlThanks: "¡Ya estás en la lista! Gracias.", nlHand: "¡No te pierdas ninguna función!", popHead: "¡No te pierdas ninguna función!", popText: "Cada mes te contaré qué espectáculos de Londres están a punto de cerrar (para que llegues a tiempo), qué se estrena y las grandes noticias de reparto. Y mis nuevas reseñas, si quieres.", popLater: "No, gracias", popClose: "Cerrar", ctEyebrow: "Contacto", ctHead: "Escríbeme", ctIntro: "Preguntas, peticiones de recomendaciones o invitaciones de prensa y relaciones públicas: me encantará saber de ti.",
+    fName: "Tu nombre", fEmail: "Correo electrónico", fReason: "¿De qué se trata?", fMessage: "Mensaje", rGeneral: "Una pregunta general", rPick: "Ayúdame a elegir un espectáculo", rPress: "Prensa y relaciones públicas", rOther: "Otra cosa",
+    ctPrivacy: "Solo usaré tus datos para responderte.", ctBtn: "Enviar mensaje", ctThanks: "¡Gracias! Tu mensaje está en camino y te responderé pronto.",
+    formInvalid: "Rellena todos los campos con un correo electrónico válido.", formError: "Lo siento, no se ha enviado. Vuelve a intentarlo en un momento.",
+    navHome: "Inicio", navLog: "El registro", navReviews: "Reseñas", navStart: "¿Por dónde empiezo?", navAbout: "Sobre mí",
+    heroEyebrow: "Musicales, obras y espectáculos",
+    heroTitle: "Reseñas sinceras de alguien que ha ido al teatro más de 100 veces.",
+    heroSub: "Musicales, obras y espectáculos, reseñados sin rodeos. Además, un registro de todo lo que he visto y un test por si no sabes por dónde empezar.",
+    ctaQuiz: "Encuentra tu primer musical", ctaLog: "Ver el registro",
+    stat1: "funciones", stat2: "producciones", stat3: "ciudades",
+    typeAll: "Musicales y obras", typeMusicals: "Musicales", typePlays: "Obras de teatro", musical: "Musical", play: "Obra",
+    nowShowing: "en cartel", latest: "Últimas reseñas", newHead: "¿Nuevo en los musicales?",
+    newText: "Cinco preguntas rápidas y tendrás tres espectáculos para probar.",
+    logEyebrow: "Desde los 10 años", logIntro: "Todos los espectáculos que he visto, dónde y cuántas veces.",
+    logNotice: "Las notas, los años y los teatros se irán añadiendo poco a poco. Si no se indica lo contrario, lo vi en Londres.",
+    searchPh: "Busca espectáculos o teatros", allCities: "Todas las ciudades",
+    sortAz: "De la A a la Z", sortSeen: "Más vistos", sortRating: "Mejor valorados",
+    summary: (n, p) => `${n} producciones, ${p} funciones`,
+    seen: "vistas", notRated: "Sin nota", read: "Leer reseña", example: "Ejemplo", noResults: "Nada coincide con esa búsqueda.",
+    revEyebrow: "Desde el patio de butacas", revIntro: "Reseñas completas de espectáculos recientes y textos más breves del archivo.",
+    enNote: "Las reseñas están en inglés. Tu navegador puede traducirlas: busca la opción «Traducir» en el menú.",
+    quizEyebrow: "Para principiantes", quizIntro: "Responde cinco preguntas y descubre tres musicales para empezar.",
+    q1: "¿Qué tipo de noche te apetece?", q1o: ["Reírme mucho", "Llorar a gusto", "Un poco de todo"],
+    q2: "¿Qué música te gusta?", q2o: ["Éxitos pop y rock", "Grandes baladas clásicas", "Algo distinto (folk, hip-hop, jazz)", "Me da igual"],
+    q3: "¿Quién viene contigo?", q3o: ["Solo adultos", "Vienen niños"],
+    q4: "¿Espectáculo o historia?", q4o: ["Grandes decorados y momentos impactantes", "Una historia íntima", "Cualquiera"],
+    q5: "¿Un musical icónico o algo nuevo y divertido?", q5o: ["Uno icónico (tipo Wicked o El Rey León)", "Algo nuevo y divertido (tipo Six u Operation Mincemeat)", "Me da igual"],
+    onNow: "En cartel en Londres", wishEyebrow: "Pendientes", wishHead: "Lo próximo en mi lista", wishIntro: "Espectáculos que aún no he visto. Primero los que están en cartel en Londres.", notOn: "Ahora no está en Londres", noneOn: "Ahora mismo no hay nada en Londres que encaje con todo eso. Prueba a cambiar una respuesta.",
+    londonNote: d => `Las recomendaciones son espectáculos en cartel en Londres ahora mismo (comprobado en ${d}).`,
+    qLabel: "Pregunta", submit: "Ver mis recomendaciones", reset: "Empezar de nuevo", pickAll: "Elige una respuesta por pregunta.",
+    resultsHead: "Tus tres mejores", rank: ["Primera opción", "Segunda opción", "Tercera opción"],
+    browseHead: "O explora por estado de ánimo", moodLaugh: "Para reír", moodCry: "Para llorar", moodBoth: "Risas y lágrimas",
+    r: { laugh: "Divertido", cry: "Emotivo", both: "Risas y lágrimas", pop: "Música pop", classic: "Música clásica", modern: "Algo distinto", kids: "Apto para niños", adults: "Mejor para adultos", big: "Gran espectáculo", intimate: "Historia íntima", eraIconic: "Icónico", eraNew: "Nuevo y divertido", pick: "Elegido por Emiliya", sceptic: "A prueba de escépticos", trusted: "Recomendación de confianza" },
+    trustedNote: "Todavía no lo he visto, pero gente de mi confianza habla maravillas.",
+    picksEyebrow: "Probado y aprobado", picksHead: "Mis recomendaciones de siempre",
+    aboutEyebrow: "Hola", aboutHead: "Sobre mí",
+    about1: "Soy Emiliya. Vi mi primer musical con unos 10 años y no he parado desde entonces. Ya llevo más de 100 funciones entre Londres, Madrid, Moscú y Nueva York.",
+    about2: "Me formé como bailarina y actriz, así que miro desde la butaca con un ojo puesto en el oficio: la coreografía, las voces, el momento en que un suplente salva la noche. Y por si te preguntas hasta dónde llega mi obsesión por los musicales: escribí mi monografía del Bachillerato Internacional sobre Hamilton.",
+    about3: "El nombre viene de las entradas que guardo desde pequeña, de espectáculos, museos y cualquier sitio al que iba, sobre todo las bonitas. Las madres de mis amigos no paraban de preguntarme qué ver, así que empecé a escribirlo. Crecí hablando inglés, español y ruso, por eso la guía para principiantes está en los tres idiomas.",
+    footer: "Todas las reseñas son mi opinión personal. Pago mis entradas salvo que la reseña diga lo contrario."
+  },
+  ru: {
+    navWhatsOn: "Афиша", woTitle: "Что идёт в театрах Лондона", woEyebrow: "Театры Лондона", woIntro: "Что идёт в Лондоне прямо сейчас: что скоро закрывается, что в репертуаре и что впереди.",
+    woChecked: d => `Последняя проверка: ${d}. Даты и составы меняются, поэтому перед покупкой проверьте сайт театра.`,
+    closingHead: "Скоро закрываются", onHead: "Идут сейчас", soonHead: "Скоро премьера",
+    finalPerf: d => `Последний показ: ${d}`, closesIn: m => `Закрывается: ${m}`, until: d => `До ${d}`, from: d => `С ${d}`, openRun: "Без даты закрытия",
+    starring: "В ролях:", finalWeek: "Последняя неделя", seenIt: "Я видела", onMyList: "В моём списке",
+    noneClosing: "В ближайшие два месяца ничего не закрывается.", noneSoon: "Пока ничего не объявлено.",
+    navContact: "Контакты", nlHead: "The Ticket Stub Diaries на вашу почту", nlText: "Выберите, что вам интересно: ежемесячный обзор лондонских театров (какие спектакли скоро закрываются, чтобы вы успели, премьеры, смены состава и звёздные кастинги), письмо о каждой новой рецензии или и то, и другое. Без спама, отписаться можно в любой момент.", nlChoose: "Выберите рассылку", nlMonthly: "Ежемесячный театральный обзор", nlReviews: "Новые рецензии сразу после публикации", nlPickOne: "Выберите хотя бы одну рассылку.", nlBtn: "Подписаться", fEmailPh: "Ваш email",
+    nlThanks: "Вы в списке! Спасибо.", nlHand: "Не пропустите ни одного спектакля!", popHead: "Не пропустите ни одного спектакля!", popText: "Каждый месяц я буду рассказывать, какие лондонские спектакли скоро закрываются (чтобы вы успели), что выходит нового и главные новости о составах. И мои новые рецензии, если хотите.", popLater: "Нет, спасибо", popClose: "Закрыть", ctEyebrow: "Контакты", ctHead: "Напишите мне", ctIntro: "Вопросы, просьбы что-нибудь посоветовать или приглашения от прессы и PR: буду рада вашему письму.",
+    fName: "Ваше имя", fEmail: "Email", fReason: "О чём письмо?", fMessage: "Сообщение", rGeneral: "Общий вопрос", rPick: "Помогите выбрать спектакль", rPress: "Пресса и PR", rOther: "Другое",
+    ctPrivacy: "Я использую ваши данные только для ответа вам.", ctBtn: "Отправить", ctThanks: "Спасибо! Сообщение отправлено, я скоро отвечу.",
+    formInvalid: "Пожалуйста, заполните все поля и укажите правильный email.", formError: "Извините, не получилось отправить. Попробуйте ещё раз чуть позже.",
+    navHome: "Главная", navLog: "Журнал", navReviews: "Рецензии", navStart: "С чего начать?", navAbout: "Обо мне",
+    heroEyebrow: "Мюзиклы, спектакли и шоу",
+    heroTitle: "Честные рецензии от человека, который был в театре больше 100 раз.",
+    heroSub: "Мюзиклы, спектакли и шоу простыми словами. А ещё журнал всего, что я посмотрела, и тест для тех, кто не знает, с чего начать.",
+    ctaQuiz: "Найдите свой первый мюзикл", ctaLog: "Открыть журнал",
+    stat1: "просмотров", stat2: "постановок", stat3: "города",
+    typeAll: "Мюзиклы и спектакли", typeMusicals: "Мюзиклы", typePlays: "Драматические спектакли", musical: "Мюзикл", play: "Спектакль",
+    nowShowing: "сейчас на сцене", latest: "Свежие рецензии", newHead: "Впервые на мюзикле?",
+    newText: "Пять коротких вопросов, и у вас будет три мюзикла на выбор.",
+    logEyebrow: "С 10 лет", logIntro: "Всё, что я видела: где и сколько раз.",
+    logNotice: "Оценки, годы и театры я добавляю постепенно. Если не указано иное, спектакль я смотрела в Лондоне.",
+    searchPh: "Поиск по названию или театру", allCities: "Все города",
+    sortAz: "По алфавиту", sortSeen: "Чаще всего", sortRating: "Лучшие оценки",
+    summary: (n, p) => `Постановок: ${n}, просмотров: ${p}`,
+    seen: "раз", notRated: "Без оценки", read: "Читать рецензию", example: "Пример", noResults: "Ничего не найдено.",
+    revEyebrow: "Из партера", revIntro: "Подробные рецензии на недавние спектакли и короткие заметки из архива.",
+    enNote: "Рецензии написаны на английском. Браузер может их перевести: найдите «Перевести» в меню.",
+    quizEyebrow: "Для новичков", quizIntro: "Ответьте на пять вопросов и получите три мюзикла для начала.",
+    q1: "Какой вечер вы хотите?", q1o: ["Посмеяться от души", "Хорошенько поплакать", "Всего понемногу"],
+    q2: "Какую музыку вы любите?", q2o: ["Поп и рок-хиты", "Большие классические баллады", "Что-то необычное (фолк, хип-хоп, джаз)", "Без разницы"],
+    q3: "Кто идёт с вами?", q3o: ["Только взрослые", "С детьми"],
+    q4: "Зрелище или история?", q4o: ["Большие декорации и вау-моменты", "Камерная история", "Неважно"],
+    q5: "Культовый мюзикл или что-то новое и весёлое?", q5o: ["Культовый (как Wicked или «Король Лев»)", "Новое и весёлое (как Six или Operation Mincemeat)", "Неважно"],
+    onNow: "Идёт в Лондоне", wishEyebrow: "Ещё не видела", wishHead: "Следующие в моём списке", wishIntro: "Спектакли, которые я ещё не видела. Сначала те, что сейчас идут в Лондоне.", notOn: "Сейчас не идёт в Лондоне", noneOn: "Сейчас в Лондоне нет ничего, что подходит под все ответы. Попробуйте изменить один из них.",
+    londonNote: d => `В подборке только спектакли, которые сейчас идут в Лондоне (проверено: ${d}).`,
+    qLabel: "Вопрос", submit: "Показать подборку", reset: "Начать заново", pickAll: "Выберите один ответ на каждый вопрос.",
+    resultsHead: "Ваша тройка", rank: ["Первый выбор", "Второй выбор", "Третий выбор"],
+    browseHead: "Или выберите по настроению", moodLaugh: "Посмеяться", moodCry: "Поплакать", moodBoth: "И смех, и слёзы",
+    r: { laugh: "Смешно", cry: "Трогательно", both: "И смех, и слёзы", pop: "Поп-музыка", classic: "Классическая музыка", modern: "Необычная музыка", kids: "Подходит детям", adults: "Лучше для взрослых", big: "Большое зрелище", intimate: "Камерная история", eraIconic: "Культовый", eraNew: "Новое и весёлое", pick: "Выбор Эмилии", sceptic: "Понравится даже скептикам", trusted: "Совет друзей" },
+    trustedNote: "Сама ещё не видела, но люди, которым я доверяю, в восторге.",
+    picksEyebrow: "Проверено", picksHead: "Мои проверенные рекомендации",
+    aboutEyebrow: "Привет", aboutHead: "Обо мне",
+    about1: "Меня зовут Эмилия. Свой первый мюзикл я увидела примерно в 10 лет и с тех пор не останавливаюсь. На моём счету уже больше 100 спектаклей в Лондоне, Мадриде, Москве и Нью-Йорке.",
+    about2: "Я училась танцу и актёрскому мастерству, поэтому смотрю из зала с профессиональным интересом: хореография, вокал, момент, когда дублёр спасает вечер. И если вам интересно, насколько далеко заходит моя любовь к мюзиклам: я написала выпускное эссе по программе IB о «Гамильтоне».",
+    about3: "Название пришло из корешков билетов, которые я храню с детства: со спектаклей, из музеев и отовсюду, где бывала, особенно если они красивые. Мамы моих друзей постоянно спрашивали, что посмотреть, и я начала записывать. Я выросла, говоря на английском, испанском и русском, поэтому гид для новичков есть на всех трёх языках.",
+    footer: "Все рецензии отражают моё личное мнение. Билеты я покупаю сама, если в рецензии не сказано иное."
+  }
+};
+
+/* ---------- APP ---------- */
+let lang = "en";
+try { const saved = localStorage.getItem("lang"); if (T[saved]) lang = saved; } catch (e) {}
+
+// Each page only contains its own section, so missing elements return a harmless spare element.
+const $ = (s, el = document) => el.querySelector(s) || document.createElement("input");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const stars = n => {
+  if (!n) return "";
+  const full = Math.floor(n), half = n % 1 >= 0.5, empty = 5 - full - (half ? 1 : 0);
+  return `<span class="stars" aria-label="${n} out of 5">${"★".repeat(full)}${half ? '<span class="half">★</span>' : ""}<span class="off">${"★".repeat(empty)}</span></span>`;
+};
+
+function applyLang() {
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(el => { const v = t[el.dataset.t]; if (typeof v === "string") el.textContent = v; });
+  document.querySelectorAll("[data-tp]").forEach(el => { el.placeholder = t[el.dataset.tp]; });
+  document.querySelectorAll("[data-tl]").forEach(el => { el.setAttribute("aria-label", t[el.dataset.tl]); });
+  document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  $(".translate-note").hidden = !t.enNote;
+  renderLog(); renderWish(); renderWhatsOn(); renderReviews(); renderQuiz(); renderLondonNote(); renderPicks(); renderMoods();
+  $("#results").hidden = true;
+}
+
+document.querySelectorAll(".langs button").forEach(b => b.addEventListener("click", () => {
+  lang = b.dataset.lang;
+  try { localStorage.setItem("lang", lang); } catch (e) {}
+  applyLang();
+}));
+
+/* Pages: each page is its own file; body data-page says which one this is */
+const PAGE = document.body.dataset.page || "home";
+function route() {
+  const navKey = PAGE === "review" ? "/reviews/" : location.pathname;
+  document.querySelectorAll("nav a").forEach(a => a.classList.toggle("active", a.getAttribute("href") === navKey));
+  trackView();
+}
+
+/* Visitor stats (GoatCounter): count each page of the site as its own path */
+function trackView() {
+  const gc = window.goatcounter;
+  if (!gc || !gc.count) return;
+  gc.count({ path: location.pathname, title: document.title });
+}
+function trackEvent(name) {
+  const gc = window.goatcounter;
+  if (gc && gc.count) gc.count({ path: name, title: name, event: true });
+}
+
+/* Log */
+function renderLog() {
+  const t = T[lang];
+  const citySel = $("#log-city");
+  const current = citySel.value;
+  const cities = [...new Set(LOG.map(r => r.city))].sort();
+  citySel.innerHTML = `<option value="">${t.allCities}</option>` + cities.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join("");
+  citySel.value = cities.includes(current) ? current : "";
+
+  const q = $("#log-search").value.trim().toLowerCase();
+  const city = citySel.value;
+  const type = $("#log-type").value;
+  const sort = $("#log-sort").value;
+  let rows = LOG.filter(r => (!city || r.city === city) && (!type || r.type === type) &&
+    (!q || [r.show, r.venue, r.note, r.city].join(" ").toLowerCase().includes(q)));
+  rows.sort((a, b) => sort === "seen" ? b.times - a.times || a.show.localeCompare(b.show) : a.show.localeCompare(b.show));
+
+  const perf = rows.reduce((s, r) => s + r.times, 0);
+  $("#log-summary").textContent = t.summary(rows.length, perf);
+  $("#log-list").innerHTML = rows.length ? rows.map(r => `
+    <div class="stub">
+      <div class="main">
+        <h3>${esc(r.show)}</h3>
+        <div class="where">${[r.venue, r.city, r.country].filter(Boolean).map(esc).join(", ")}${r.year ? `, ${r.year}` : ""}</div>
+        ${r.note ? `<div class="note">${esc(r.note)}</div>` : ""}
+        <div class="row2"><span class="chip">${t[r.type]}</span>${stars(r.rating)}
+          ${r.review ? `<a href="/reviews/${esc(r.review)}/">${t.read}</a>` : ""}
+        </div>
+      </div>
+      <div class="count"><div><b>${r.times}</b><span>${t.seen}</span></div></div>
+    </div>`).join("") : `<p class="empty">${t.noResults}</p>`;
+}
+["input", "change"].forEach(ev => {
+  $("#log-search").addEventListener(ev, renderLog);
+  $("#log-city").addEventListener(ev, renderLog);
+  $("#log-sort").addEventListener(ev, renderLog);
+  $("#log-type").addEventListener(ev, renderLog);
+});
+
+/* Reviews */
+function renderReviews() {
+  const t = T[lang];
+  const html = REVIEWS.map(r => `
+    <a class="review-card" href="/reviews/${esc(r.id)}/">
+      <h3>${esc(r.title)}</h3>
+      <div class="meta">${esc(r.meta)}</div>
+      <div>${stars(r.rating)} ${r.example ? `<span class="chip ex">${t.example}</span>` : ""}</div>
+    </a>`).join("");
+  $("#review-list").innerHTML = html;
+  $("#home-reviews").innerHTML = html;
+}
+
+/* Quiz */
+const QUESTIONS = [
+  { key: "era", tk: "q5", values: ["iconic", "new", "any"] },
+  { key: "mood", tk: "q1", values: ["laugh", "cry", "both"] },
+  { key: "music", tk: "q2", values: ["pop", "classic", "modern", "any"] },
+  { key: "group", tk: "q3", values: ["adults", "kids"] },
+  { key: "scale", tk: "q4", values: ["big", "intimate", "any"] }
+];
+function renderQuiz() {
+  const t = T[lang];
+  const form = $("#quiz");
+  form.innerHTML = QUESTIONS.map((q, i) => `
+    <fieldset>
+      <legend><small>${t.qLabel} ${i + 1} / ${QUESTIONS.length}</small>${t[q.tk]}</legend>
+      <div class="opts">
+        ${q.values.map((v, j) => `<label><input type="radio" id="q-${q.key}-${v}" name="${q.key}" value="${v}"><span>${t[q.tk + "o"][j]}</span></label>`).join("")}
+      </div>
+    </fieldset>`).join("") + `
+    <p class="quiz-msg" id="quiz-msg" role="status"></p>
+    <div class="btn-row" style="margin-top:0">
+      <button class="btn" type="submit">${t.submit}</button>
+      <button class="btn ghost" type="reset">${t.reset}</button>
+    </div>`;
+}
+function scoreShow(s, a) {
+  if (a.group === "kids" && !s.kids) return -Infinity;
+  let score = 0;
+  if (a.mood === s.mood) score += 3;
+  else if (a.mood === "both" || s.mood === "both") score += 1;
+  if (a.music === "any") score += 1; else if (a.music === s.music) score += 2;
+  if (a.scale === "any" || s.scale === "mid") score += 1; else if (a.scale === s.scale) score += 2;
+  if (a.era === "any") score += 1; else if (a.era === s.era || s.era === "both") score += 2;
+  if (PICK[s.name]) score += 1;
+  if (s.seen === false) score -= 1;
+  return score;
+}
+$("#quiz").addEventListener("submit", e => {
+  e.preventDefault();
+  const t = T[lang];
+  const fd = new FormData(e.target);
+  const a = Object.fromEntries(QUESTIONS.map(q => [q.key, fd.get(q.key)]));
+  if (Object.values(a).some(v => !v)) { $("#quiz-msg").textContent = t.pickAll; return; }
+  $("#quiz-msg").textContent = "";
+  const top = SHOWS.map((s, i) => ({ s, i, score: scoreShow(s, a) }))
+    .filter(x => x.score > -Infinity && ON_NOW.has(x.s.name))
+    .sort((x, y) => y.score - x.score || x.i - y.i)
+    .slice(0, 3);
+  $("#picks").innerHTML = top.length === 0 ? `<p class="empty">${t.noneOn}</p>` : top.map(({ s }, i) => {
+    const chips = [t.r[s.mood], t.r[s.music], s.kids ? t.r.kids : t.r.adults, s.scale !== "mid" ? t.r[s.scale] : null, ...(s.era === "both" ? [t.r.eraIconic, t.r.eraNew] : [t.r[s.era === "iconic" ? "eraIconic" : "eraNew"]])].filter(Boolean);
+    const mine = PICK[s.name];
+    if (s.seen === false) chips.unshift(t.r.trusted);
+    if (mine) chips.unshift(t.r.pick);
+    if (mine && mine.sceptic) chips.splice(1, 0, t.r.sceptic);
+    return `<div class="pick">
+      <div class="rank">${t.rank[i]}</div>
+      <h3>${esc(s.name)}</h3>
+      <p>${esc(s[lang])}</p>
+      ${mine ? `<p class="my-note">${esc(mine[lang])}</p>` : ""}
+      ${s.seen === false ? `<p class="my-note">${t.trustedNote}</p>` : ""}
+      <div class="chips">${chips.map(c => `<span class="chip">${esc(c)}</span>`).join("")}</div>
+    </div>`;
+  }).join("");
+  $("#results").hidden = false;
+  $("#results").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+});
+$("#quiz").addEventListener("reset", () => { $("#results").hidden = true; $("#quiz-msg").textContent = ""; });
+
+function renderWhatsOn() {
+  const t = T[lang];
+  const loc = { en: "en-GB", es: "es-ES", ru: "ru-RU" }[lang];
+  const fmt = d => d.toLocaleDateString(loc, { day: "numeric", month: "short", year: "numeric" });
+  const fmtMonth = d => d.toLocaleDateString(loc, { month: "long", year: "numeric" });
+  const seen = new Set(LOG.map(r => r.show)), wish = new Set(WISHLIST.map(w => w.show));
+  const trusted = new Set(SHOWS.filter(x => x.seen === false).map(x => x.name));
+  const soonLimit = new Date(TODAY); soonLimit.setDate(soonLimit.getDate() + 60);
+  const weekLimit = new Date(TODAY); weekLimit.setDate(weekLimit.getDate() + 7);
+  const card = (e, mode) => {
+    const end = endOf(e);
+    let when;
+    if (mode === "soon") when = t.from(fmt(new Date(e.opens + "T00:00:00")));
+    else if (e.closes) when = mode === "closing" ? t.finalPerf(fmt(end)) : t.until(fmt(end));
+    else if (e.closesMonth) when = t.closesIn(fmtMonth(end));
+    else when = t.openRun;
+    const chips = [`<span class="chip">${t[e.type]}</span>`];
+    if (mode === "closing" && e.closes && end <= weekLimit) chips.push(`<span class="chip hot">${t.finalWeek}</span>`);
+    if (PICK[e.show]) chips.push(`<span class="chip on">${t.r.pick}</span>`);
+    else if (seen.has(e.show)) chips.push(`<span class="chip on">${t.seenIt}</span>`);
+    if (wish.has(e.show)) chips.push(`<span class="chip ex">${t.onMyList}</span>`);
+    if (trusted.has(e.show)) chips.push(`<span class="chip off">${t.r.trusted}</span>`);
+    return `<div class="wo-card">
+      <h3>${esc(e.show)}</h3>
+      <div class="wo-venue">${esc(e.venue)}</div>
+      <div class="wo-when">${esc(when)}</div>
+      ${e.stars ? `<div class="wo-stars">${t.starring} ${esc(e.stars)}</div>` : ""}
+      <div class="chips">${chips.join("")}</div>
+    </div>`;
+  };
+  const running = WHATS_ON.filter(isRunning);
+  const closing = running.filter(e => endOf(e) && endOf(e) <= soonLimit).sort((a, b) => endOf(a) - endOf(b));
+  const type = $("#wo-type").value;
+  const onNow = running.filter(e => !closing.includes(e) && (!type || e.type === type)).sort((a, b) => a.show.localeCompare(b.show));
+  const upcoming = WHATS_ON.filter(e => e.opens && new Date(e.opens + "T00:00:00") > TODAY).sort((a, b) => a.opens.localeCompare(b.opens));
+  $("#wo-checked").textContent = t.woChecked(WO_CHECKED[lang]);
+  $("#wo-closing").innerHTML = closing.map(e => card(e, "closing")).join("") || `<p class="empty">${t.noneClosing}</p>`;
+  $("#wo-on").innerHTML = onNow.map(e => card(e, "on")).join("");
+  $("#wo-soon").innerHTML = upcoming.map(e => card(e, "soon")).join("") || `<p class="empty">${t.noneSoon}</p>`;
+}
+$("#wo-type").addEventListener("change", renderWhatsOn);
+function renderWish() {
+  const t = T[lang];
+  const order = w => ON_NOW.has(w.show) ? 0 : w.soon ? 1 : 2;
+  $("#wish-list").innerHTML = [...WISHLIST].sort((a, b) => order(a) - order(b)).map(w => `
+    <li><span class="wish-name">${esc(w.show)}</span>
+      ${w.type === "play" ? `<span class="chip">${t.play}</span>` : ""}
+      ${ON_NOW.has(w.show) ? `<span class="chip on">${t.onNow}</span>` : w.soon ? `<span class="chip ex">${esc(w.soon[lang])}</span>` : ""}
+    </li>`).join("");
+}
+function renderLondonNote() { $("#london-note").textContent = T[lang].londonNote(CHECKED[lang]); }
+function renderPicks() {
+  const t = T[lang];
+  $("#my-picks").innerHTML = PICKS.map(p => `
+    <div class="mp">
+      <div class="mp-top"><h3>${esc(p.name)}</h3><span class="chip">${t[p.type]}</span></div>
+      ${ON_NOW.has(p.name) ? `<span class="chip on">${t.onNow}</span>` : `<span class="chip off">${t.notOn}</span>`}
+      <p>${esc(p[lang])}</p>
+      ${p.sceptic ? `<span class="chip ex">${t.r.sceptic}</span>` : ""}
+    </div>`).join("");
+}
+function renderMoods() {
+  const t = T[lang];
+  const groups = [["laugh", t.moodLaugh], ["cry", t.moodCry], ["both", t.moodBoth]];
+  $("#moods").innerHTML = groups.map(([m, label]) => `
+    <div class="panel mood mood-${m}">
+      <h3>${label}</h3>
+      <ul>${SHOWS.filter(s => s.mood === m).map(s => `<li><b>${esc(s.name)}</b>${s.seen === false ? ` <span class="chip off">${t.r.trusted}</span>` : ""}${ON_NOW.has(s.name) ? ` <span class="chip on">${t.onNow}</span>` : ""}<small>${s.kids ? t.r.kids : t.r.adults}</small></li>`).join("")}</ul>
+    </div>`).join("");
+}
+
+// Marquee of every production in the Log
+const titles = [...new Set(LOG.map(r => r.show))];
+const strip = titles.map(n => `<span>${esc(n)}</span><svg class="mq-star" aria-hidden="true"><use href="#d-star"/></svg>`).join("");
+$("#marquee-track").innerHTML = strip + strip;
+$("#st-perf").textContent = LOG.reduce((s, r) => s + r.times, 0);
+$("#st-prod").textContent = LOG.length;
+$("#st-city").textContent = new Set(LOG.map(r => r.city)).size;
+// Netlify Forms: submit in the background and show a thank-you message
+document.querySelectorAll("form.ns-form").forEach(f => f.addEventListener("submit", async e => {
+  e.preventDefault();
+  const t = T[lang], msg = f.querySelector(".form-msg");
+  if (!f.checkValidity()) { msg.textContent = t.formInvalid; msg.className = "form-msg err"; return; }
+  if (f.name === "newsletter" && !f.querySelector(".nl-choices input:checked")) { msg.textContent = t.nlPickOne; msg.className = "form-msg err"; return; }
+  f.querySelector('input[name="language"]').value = lang;
+  const btn = f.querySelector('button[type="submit"]'); btn.disabled = true;
+  try {
+    const r = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(f)).toString() });
+    if (!r.ok) throw new Error(r.status);
+    f.reset();
+    msg.textContent = f.name === "newsletter" ? t.nlThanks : t.ctThanks; msg.className = "form-msg ok";
+    if (f.name === "newsletter") {
+      try { localStorage.setItem("nlPop", "signed"); } catch (e2) {}
+      trackEvent(f.closest("#nl-pop") ? "newsletter-signup-popup" : "newsletter-signup-home");
+      if (f.closest("#nl-pop")) setTimeout(closePop, 2200);
+    } else trackEvent("contact-message");
+  } catch (err) {
+    msg.textContent = t.formError; msg.className = "form-msg err";
+  } finally { btn.disabled = false; }
+}));
+
+/* Newsletter pop-up: appears once, after 25 seconds or half a page of scrolling */
+const pop = $("#nl-pop");
+function popSeen() { try { return !!localStorage.getItem("nlPop"); } catch (e) { return true; } }
+function openPop() {
+  if (popSeen() || PAGE === "contact" || !pop.hidden) return;
+  pop.hidden = false;
+  requestAnimationFrame(() => requestAnimationFrame(() => pop.classList.add("show")));
+  try { localStorage.setItem("nlPop", "shown"); } catch (e) {}
+  trackEvent("newsletter-popup-shown");
+}
+function closePop() {
+  pop.classList.remove("show");
+  setTimeout(() => { pop.hidden = true; }, 450);
+}
+pop.querySelector(".pop-x").addEventListener("click", closePop);
+pop.querySelector(".pop-later").addEventListener("click", closePop);
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !pop.hidden) closePop(); });
+if (!popSeen()) {
+  const timer = setTimeout(openPop, 25000);
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    if (h > 400 && scrollY / h > 0.5) { clearTimeout(timer); removeEventListener("scroll", onScroll); openPop(); }
+  };
+  addEventListener("scroll", onScroll, { passive: true });
+}
+
+applyLang();
+route();
+</script>
+
+
+</body></html>

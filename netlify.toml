@@ -1,0 +1,19 @@
+# The site is pre-built by build.py and committed in public/. Netlify just publishes that folder.
+[build]
+  publish = "public"
+
+[[redirects]]
+  from = "/start"
+  to = "/where-to-start/"
+  status = 301
+
+[[redirects]]
+  from = "/start/"
+  to = "/where-to-start/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
