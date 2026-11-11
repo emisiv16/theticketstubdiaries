@@ -258,6 +258,7 @@ legend small { display: block; font-family: var(--font-body); color: var(--rose-
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .newsletter { margin-top: 22px; background: var(--blush); text-align: center; overflow: hidden; }
 .newsletter p { color: var(--ink); max-width: 52ch; margin: 0 auto 16px; }
+.nl-hand { font-family: var(--font-hand); line-height: 1; margin: 0 0 2px !important; font-size: 1.7rem; color: var(--rose-ink) !important; }
 .nl-doodle { position: absolute; right: 18px; top: 14px; width: 40px; height: 40px; }
 .nl-form { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .nl-form input[type=email] { flex: 1 1 240px; max-width: 360px; }
@@ -409,6 +410,7 @@ footer .scallops { background: radial-gradient(circle at 14px 18px, var(--sage) 
     </div>
     <div class="panel newsletter">
       <svg class="d nl-doodle" aria-hidden="true" style="fill:var(--butter)"><use href="#d-sparkle"/></svg>
+      <p class="hand nl-hand" data-t="nlHand">Don't miss a show!</p>
       <h2 data-t="nlHead">Get the Ticket Stub Diaries in your inbox</h2>
       <p data-t="nlText">New reviews and a heads-up when shows are about to close. No spam, and you can unsubscribe any time.</p>
       <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="ns-form nl-form" novalidate>
@@ -625,8 +627,8 @@ footer .scallops { background: radial-gradient(circle at 14px 18px, var(--sage) 
 <aside class="nl-pop" id="nl-pop" role="dialog" aria-labelledby="pop-head" hidden>
   <svg class="d pop-doodle" aria-hidden="true" style="fill:var(--butter)"><use href="#d-ticket"/></svg>
   <button class="pop-x" type="button" data-tl="popClose" aria-label="Close">&times;</button>
-  <h2 id="pop-head" data-t="popHead">Psst... want the theatre news?</h2>
-  <p data-t="popText">A monthly London roundup and my new reviews, straight to your inbox. Pick one or both.</p>
+  <h2 id="pop-head" data-t="popHead">Don't miss a show!</h2>
+  <p data-t="popText">Every month I'll tell you which London shows are closing (so you can catch them in time), what's opening and any big cast news. Plus my new reviews, if you like.</p>
   <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="ns-form nl-form" novalidate>
     <input type="hidden" name="form-name" value="newsletter">
     <input type="hidden" name="language" value="en">
@@ -932,8 +934,8 @@ const T = {
     finalPerf: d => `Final performance ${d}`, closesIn: m => `Closes ${m}`, until: d => `Until ${d}`, from: d => `From ${d}`, openRun: "Open run",
     starring: "Starring", finalWeek: "Final week", seenIt: "I've seen it", onMyList: "On my list",
     noneClosing: "Nothing closing in the next two months.", noneSoon: "Nothing announced yet.",
-    navContact: "Contact", nlHead: "Get the Ticket Stub Diaries in your inbox", nlText: "Pick what you'd like: a monthly London theatre roundup (what's opening, what's closing, cast changes and big-name castings), a note whenever I post a new review, or both. No spam, and you can unsubscribe any time.", nlChoose: "Choose your emails", nlMonthly: "Monthly theatre roundup", nlReviews: "New reviews as they're posted", nlPickOne: "Pick at least one of the two emails.", nlBtn: "Sign me up", fEmailPh: "Your email address",
-    nlThanks: "You're on the list! Thank you.", popHead: "Psst... want the theatre news?", popText: "A monthly London roundup and my new reviews, straight to your inbox. Pick one or both.", popLater: "No thanks", popClose: "Close", ctEyebrow: "Contact", ctHead: "Say hello", ctIntro: "Questions, recommendation requests, or press and PR invitations: I'd love to hear from you.",
+    navContact: "Contact", nlHead: "Get the Ticket Stub Diaries in your inbox", nlText: "Pick what you'd like: a monthly London theatre roundup (which shows are closing so you can catch them in time, what's opening, cast changes and big-name castings), a note whenever I post a new review, or both. No spam, and you can unsubscribe any time.", nlChoose: "Choose your emails", nlMonthly: "Monthly theatre roundup", nlReviews: "New reviews as they're posted", nlPickOne: "Pick at least one of the two emails.", nlBtn: "Sign me up", fEmailPh: "Your email address",
+    nlThanks: "You're on the list! Thank you.", nlHand: "Don't miss a show!", popHead: "Don't miss a show!", popText: "Every month I'll tell you which London shows are closing (so you can catch them in time), what's opening and any big cast news. Plus my new reviews, if you like.", popLater: "No thanks", popClose: "Close", ctEyebrow: "Contact", ctHead: "Say hello", ctIntro: "Questions, recommendation requests, or press and PR invitations: I'd love to hear from you.",
     fName: "Your name", fEmail: "Email", fReason: "What's it about?", fMessage: "Message", rGeneral: "A general question", rPick: "Help me pick a show", rPress: "Press and PR invitations", rOther: "Something else",
     ctPrivacy: "I'll only use your details to reply to you.", ctBtn: "Send message", ctThanks: "Thank you! Your message is on its way and I'll reply soon.",
     formInvalid: "Please fill in every field with a valid email address.", formError: "Sorry, that didn't send. Please try again in a moment.",
@@ -980,8 +982,8 @@ const T = {
     finalPerf: d => `Última función: ${d}`, closesIn: m => `Termina en ${m}`, until: d => `Hasta el ${d}`, from: d => `Desde el ${d}`, openRun: "Sin fecha de cierre",
     starring: "Con", finalWeek: "Última semana", seenIt: "Ya lo he visto", onMyList: "En mi lista",
     noneClosing: "Nada termina en los próximos dos meses.", noneSoon: "Todavía no hay nada anunciado.",
-    navContact: "Contacto", nlHead: "Recibe The Ticket Stub Diaries en tu correo", nlText: "Elige lo que quieras: un resumen mensual del teatro en Londres (estrenos, cierres, cambios de reparto y fichajes estrella), un aviso cada vez que publique una reseña, o ambos. Sin spam, y puedes darte de baja cuando quieras.", nlChoose: "Elige tus correos", nlMonthly: "Resumen mensual de teatro", nlReviews: "Nuevas reseñas cuando las publique", nlPickOne: "Elige al menos uno de los dos correos.", nlBtn: "Apúntame", fEmailPh: "Tu correo electrónico",
-    nlThanks: "¡Ya estás en la lista! Gracias.", popHead: "Psst... ¿quieres estar al día del teatro?", popText: "Un resumen mensual de Londres y mis nuevas reseñas, directos a tu correo. Elige uno o los dos.", popLater: "No, gracias", popClose: "Cerrar", ctEyebrow: "Contacto", ctHead: "Escríbeme", ctIntro: "Preguntas, peticiones de recomendaciones o invitaciones de prensa y relaciones públicas: me encantará saber de ti.",
+    navContact: "Contacto", nlHead: "Recibe The Ticket Stub Diaries en tu correo", nlText: "Elige lo que quieras: un resumen mensual del teatro en Londres (qué obras cierran para que llegues a tiempo, estrenos, cambios de reparto y fichajes estrella), un aviso cada vez que publique una reseña, o ambos. Sin spam, y puedes darte de baja cuando quieras.", nlChoose: "Elige tus correos", nlMonthly: "Resumen mensual de teatro", nlReviews: "Nuevas reseñas cuando las publique", nlPickOne: "Elige al menos uno de los dos correos.", nlBtn: "Apúntame", fEmailPh: "Tu correo electrónico",
+    nlThanks: "¡Ya estás en la lista! Gracias.", nlHand: "¡No te pierdas ninguna función!", popHead: "¡No te pierdas ninguna función!", popText: "Cada mes te contaré qué espectáculos de Londres están a punto de cerrar (para que llegues a tiempo), qué se estrena y las grandes noticias de reparto. Y mis nuevas reseñas, si quieres.", popLater: "No, gracias", popClose: "Cerrar", ctEyebrow: "Contacto", ctHead: "Escríbeme", ctIntro: "Preguntas, peticiones de recomendaciones o invitaciones de prensa y relaciones públicas: me encantará saber de ti.",
     fName: "Tu nombre", fEmail: "Correo electrónico", fReason: "¿De qué se trata?", fMessage: "Mensaje", rGeneral: "Una pregunta general", rPick: "Ayúdame a elegir un espectáculo", rPress: "Prensa y relaciones públicas", rOther: "Otra cosa",
     ctPrivacy: "Solo usaré tus datos para responderte.", ctBtn: "Enviar mensaje", ctThanks: "¡Gracias! Tu mensaje está en camino y te responderé pronto.",
     formInvalid: "Rellena todos los campos con un correo electrónico válido.", formError: "Lo siento, no se ha enviado. Vuelve a intentarlo en un momento.",
@@ -1029,8 +1031,8 @@ const T = {
     finalPerf: d => `Последний показ: ${d}`, closesIn: m => `Закрывается: ${m}`, until: d => `До ${d}`, from: d => `С ${d}`, openRun: "Без даты закрытия",
     starring: "В ролях:", finalWeek: "Последняя неделя", seenIt: "Я видела", onMyList: "В моём списке",
     noneClosing: "В ближайшие два месяца ничего не закрывается.", noneSoon: "Пока ничего не объявлено.",
-    navContact: "Контакты", nlHead: "The Ticket Stub Diaries на вашу почту", nlText: "Выберите, что вам интересно: ежемесячный обзор лондонских театров (премьеры, закрытия, смены состава и звёздные кастинги), письмо о каждой новой рецензии или и то, и другое. Без спама, отписаться можно в любой момент.", nlChoose: "Выберите рассылку", nlMonthly: "Ежемесячный театральный обзор", nlReviews: "Новые рецензии сразу после публикации", nlPickOne: "Выберите хотя бы одну рассылку.", nlBtn: "Подписаться", fEmailPh: "Ваш email",
-    nlThanks: "Вы в списке! Спасибо.", popHead: "Пс... хотите быть в курсе театральных новостей?", popText: "Ежемесячный обзор лондонских театров и мои новые рецензии прямо на вашу почту. Выберите одно или оба.", popLater: "Нет, спасибо", popClose: "Закрыть", ctEyebrow: "Контакты", ctHead: "Напишите мне", ctIntro: "Вопросы, просьбы что-нибудь посоветовать или приглашения от прессы и PR: буду рада вашему письму.",
+    navContact: "Контакты", nlHead: "The Ticket Stub Diaries на вашу почту", nlText: "Выберите, что вам интересно: ежемесячный обзор лондонских театров (какие спектакли скоро закрываются, чтобы вы успели, премьеры, смены состава и звёздные кастинги), письмо о каждой новой рецензии или и то, и другое. Без спама, отписаться можно в любой момент.", nlChoose: "Выберите рассылку", nlMonthly: "Ежемесячный театральный обзор", nlReviews: "Новые рецензии сразу после публикации", nlPickOne: "Выберите хотя бы одну рассылку.", nlBtn: "Подписаться", fEmailPh: "Ваш email",
+    nlThanks: "Вы в списке! Спасибо.", nlHand: "Не пропустите ни одного спектакля!", popHead: "Не пропустите ни одного спектакля!", popText: "Каждый месяц я буду рассказывать, какие лондонские спектакли скоро закрываются (чтобы вы успели), что выходит нового и главные новости о составах. И мои новые рецензии, если хотите.", popLater: "Нет, спасибо", popClose: "Закрыть", ctEyebrow: "Контакты", ctHead: "Напишите мне", ctIntro: "Вопросы, просьбы что-нибудь посоветовать или приглашения от прессы и PR: буду рада вашему письму.",
     fName: "Ваше имя", fEmail: "Email", fReason: "О чём письмо?", fMessage: "Сообщение", rGeneral: "Общий вопрос", rPick: "Помогите выбрать спектакль", rPress: "Пресса и PR", rOther: "Другое",
     ctPrivacy: "Я использую ваши данные только для ответа вам.", ctBtn: "Отправить", ctThanks: "Спасибо! Сообщение отправлено, я скоро отвечу.",
     formInvalid: "Пожалуйста, заполните все поля и укажите правильный email.", formError: "Извините, не получилось отправить. Попробуйте ещё раз чуть позже.",
