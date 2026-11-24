@@ -6,6 +6,11 @@
   directory = "netlify/functions"
 
 [[redirects]]
+  from = "/reviews/template/*"
+  to = "/reviews/"
+  status = 301
+
+[[redirects]]
   from = "/start"
   to = "/where-to-start/"
   status = 301

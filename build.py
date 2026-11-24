@@ -50,13 +50,10 @@ PAGES = [
     ("contact", "/contact/",
      "Contact and Press Invitations | The Ticket Stub Diaries",
      "Get in touch with The Ticket Stub Diaries: questions, show recommendations, and press night and PR invitations for London theatre."),
-    ("review-template", "/reviews/template/",
-     "Review template | The Ticket Stub Diaries",
-     "How reviews on The Ticket Stub Diaries are laid out."),
 ]
 NOINDEX = {"review-template", "notfound"}
 CRUMB = {"reviews": "Reviews", "whats-on": "What's on", "start": "Where do I start?", "log": "The Log",
-         "about": "About", "contact": "Contact", "review-template": "Review template"}
+         "about": "About", "contact": "Contact"}
 
 NOT_FOUND = """  <section data-view="notfound">
     <div class="page-head">
@@ -171,20 +168,19 @@ def build():
     tpl = (ROOT / "src/template.html").read_text(encoding="utf-8")
     reviews = read_reviews()
     cards = [{"id": r["slug"], "title": r["show"], "meta": r.get("meta") or r["verdict"], "rating": r["rating"]} for r in reviews]
-    cards.append({"id": "template", "title": "Review template", "meta": "How every review will look", "rating": 4, "example": True})
     reviews_js = json.dumps(cards, ensure_ascii=False)
 
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
     for f in (ROOT / "static").iterdir():
-        shutil.copy(f, OUT / f.name)
+        (shutil.copytree if f.is_dir() else shutil.copy)(f, OUT / f.name)
 
     website = {"@type": "WebSite", "@id": SITE + "/#website", "name": BRAND, "url": SITE + "/",
                "inLanguage": "en-GB", "description": PAGES[0][3], "publisher": AUTHOR}
     sitemap, written = [], []
     for page, path, title, desc in PAGES:
-        ld = [website] if page == "home" else [breadcrumbs([("Home", "/")] + ([("Reviews", "/reviews/")] if page == "review-template" else []) + [(CRUMB[page], path)])]
+        ld = [website] if page == "home" else [breadcrumbs([("Home", "/")] + [(CRUMB[page], path)])]
         if page == "about":
             ld.append({"@type": "ProfilePage", "url": SITE + path, "mainEntity": {**AUTHOR, "jobTitle": "Theatre reviewer", "knowsLanguage": ["en", "es", "ru"]}})
         written.append((path, write(path, render(tpl, page=page, path=path, title=title, desc=desc, ld=ld, reviews_js=reviews_js))))
