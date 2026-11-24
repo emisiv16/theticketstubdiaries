@@ -170,7 +170,8 @@ section[data-view].on { display: block; }
 .empty { color: var(--ink-soft); padding: 20px 0; }
 
 /* Review page */
-.review { max-width: 68ch; background: var(--paper); border-radius: 22px; padding: 28px; }
+.review { background: var(--paper); border-radius: 22px; padding: 28px; }
+@media (min-width: 760px) { .review { padding: 44px 56px; font-size: 1.1rem; } .review .verdict { font-size: 1.9rem; } }
 .review h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
 .verdict { font-family: var(--font-hand); font-size: 1.7rem; line-height: 1.2; color: var(--rose-ink); margin: 14px 0 8px; }
 .review-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin: 20px 0; padding: 14px; background: var(--sky-soft); border-radius: 14px; }
