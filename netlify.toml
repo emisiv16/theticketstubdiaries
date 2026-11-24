@@ -2,6 +2,9 @@
 [build]
   publish = "public"
 
+[functions]
+  directory = "netlify/functions"
+
 [[redirects]]
   from = "/start"
   to = "/where-to-start/"
