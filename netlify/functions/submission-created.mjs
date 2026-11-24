@@ -67,11 +67,17 @@ async function sendWelcome(email, lists) {
   console.log(res.ok ? `Welcome sent to ${email}` : `Resend failed: ${res.status} ${await res.text()}`);
 }
 
-// ---------- The welcome email (Emiliya's approved wording, 24 Nov 2026) ----------
+// ---------- The welcome email (Emiliya's approved wording, 24 Nov 2026; styled like the site) ----------
+// Email apps ignore most modern CSS, so this uses tables and inline styles. The header, signature and
+// footer edge are PNGs in static/email/ so the site's doodles and fonts show everywhere (Gmail included).
+const C = { cream: "#FFF7E6", paper: "#FFFDF8", blush: "#F7C8D3", rose: "#B46A72", roseInk: "#8E4752", sage: "#A8B58A", sageSoft: "#E7ECD9", butter: "#F6E3A1", ink: "#2D3A47", soft: "#5B6876" };
+const HEAD = "'Yeseva One', Georgia, 'Times New Roman', serif";
+const BODY = "Nunito, 'Helvetica Neue', Helvetica, Arial, sans-serif";
+
 function welcomeEmail(lists) {
   const parts = [];
-  if (lists.monthly) parts.push(["The monthly roundup", "once a month, which London shows are closing soon (so you can catch them in time), what's opening, and any big cast news."]);
-  if (lists.reviews) parts.push(["New reviews", "an email whenever I post a new review. Some months there'll be a few, some months none. Theatre isn't my day job, so my show-going is a bit all over the place!"]);
+  if (lists.monthly) parts.push({ bg: C.butter, h: "The monthly roundup", b: "once a month, which London shows are closing soon (so you can catch them in time), what's opening, and any big cast news." });
+  if (lists.reviews) parts.push({ bg: C.blush, h: "New reviews", b: "an email whenever I post a new review. Some months there'll be a few, some months none. Theatre isn't my day job, so my show-going is a bit all over the place!" });
   const links = [
     ["Not sure what to see? Try the ", "quiz", "/where-to-start/", " and you'll get three picks in under a minute."],
     ["See ", "what's on in London", "/whats-on/", " right now, including what's closing soon."],
@@ -83,29 +89,78 @@ function welcomeEmail(lists) {
     "Hi there,", "",
     "Thank you for signing up to The Ticket Stub Diaries!", "",
     intro, "",
-    ...parts.map(([h, b]) => `${h}: ${b}\n`),
+    ...parts.map(x => `${x.h}: ${x.b}\n`),
     "In the meantime:",
     ...links.map(([a, l, p, b]) => `- ${a}${l}${b} ${SITE}${p}`), "",
     "And if you ever want a recommendation, just hit reply. I read everything.", "",
     "xo, Emiliya", "",
-    `The Ticket Stub Diaries · ${SITE}`
+    `The Ticket Stub Diaries · ${SITE}`,
+    "You're getting this because you signed up on the website."
   ].join("\n");
 
-  const p = s => `<p style="margin:0 0 16px">${s}</p>`;
-  const html = `<!DOCTYPE html><html><body style="margin:0;padding:0;background:#FFF7E6">
-<div style="max-width:560px;margin:0 auto;padding:32px 24px;font-family:Nunito,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#2D3A47">
-<p style="margin:0 0 24px;font-family:Georgia,serif;font-size:22px;color:#2D3A47">The Ticket Stub <span style="color:#B46A72;font-style:italic">Diaries</span></p>
-${p("Hi there,")}
-${p("Thank you for signing up to The Ticket Stub Diaries!")}
-${p(intro)}
-${parts.map(([h, b]) => p(`<strong>${h}:</strong> ${b}`)).join("\n")}
-${p("In the meantime:")}
-<ul style="margin:0 0 16px;padding-left:20px">
-${links.map(([a, l, path, b]) => `<li style="margin-bottom:6px">${a}<a href="${SITE}${path}" style="color:#8E4752">${l}</a>${b}</li>`).join("\n")}
-</ul>
-${p("And if you ever want a recommendation, just hit reply. I read everything.")}
-<p style="margin:0 0 32px;font-family:'Caveat',cursive,Georgia,serif;font-size:22px;color:#8E4752">xo, Emiliya</p>
-<p style="margin:0;font-size:12px;color:#8a8f96"><a href="${SITE}" style="color:#8a8f96">theticketstubdiaries.com</a></p>
-</div></body></html>`;
+  const para = s => `<p style="margin:0 0 16px;font-family:${BODY};font-size:16px;line-height:1.6;color:${C.ink}">${s}</p>`;
+  const stub = x => `
+      <tr><td style="padding:0 0 12px">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${x.bg};border-radius:16px">
+          <tr><td style="padding:16px 20px;border-left:3px dashed ${C.paper}">
+            <p style="margin:0 0 4px;font-family:${HEAD};font-size:18px;color:${C.ink}">${x.h}</p>
+            <p style="margin:0;font-family:${BODY};font-size:15px;line-height:1.55;color:${C.ink}">${x.b.charAt(0).toUpperCase() + x.b.slice(1)}</p>
+          </td></tr>
+        </table>
+      </td></tr>`;
+  const link = ([a, l, path, b]) => `
+          <tr><td style="padding:0 0 10px;font-family:${BODY};font-size:15px;line-height:1.55;color:${C.ink}">
+            <span style="color:${C.roseInk}">&#9733;</span>&nbsp; ${a}<a href="${SITE}${path}" style="color:${C.roseInk};font-weight:700;text-decoration:underline">${l}</a>${b}
+          </td></tr>`;
+
+  const html = `<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light">
+<title>Welcome to The Ticket Stub Diaries</title>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:${C.cream}">
+<div style="display:none;max-height:0;overflow:hidden">Here's what's coming your way, plus a few things to explore in the meantime.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${C.cream}">
+<tr><td align="center" style="padding:0">
+  <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px">
+    <tr><td><a href="${SITE}"><img src="${SITE}/email/header.png" width="600" alt="The Ticket Stub Diaries" style="display:block;width:100%;max-width:600px;height:auto;border:0"></a></td></tr>
+    <tr><td style="padding:0 16px 24px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${C.paper};border-radius:22px">
+        <tr><td style="padding:32px 28px 12px">
+          <p style="margin:0 0 6px;font-family:${BODY};font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:${C.rose}">You're in!</p>
+          <h1 style="margin:0 0 20px;font-family:${HEAD};font-weight:400;font-size:28px;line-height:1.2;color:${C.ink}">Welcome to The Ticket Stub Diaries</h1>
+          ${para("Hi there,")}
+          ${para("Thank you for signing up to The Ticket Stub Diaries!")}
+          ${para(intro)}
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${parts.map(stub).join("")}
+          </table>
+        </td></tr>
+        <tr><td style="padding:8px 28px 8px">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${C.sageSoft};border-radius:16px">
+            <tr><td style="padding:18px 20px 8px">
+              <p style="margin:0 0 12px;font-family:${HEAD};font-size:18px;color:${C.ink}">In the meantime:</p>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${links.map(link).join("")}
+              </table>
+            </td></tr>
+          </table>
+        </td></tr>
+        <tr><td align="center" style="padding:22px 28px 6px">
+          <a href="${SITE}/where-to-start/" style="display:inline-block;background:${C.ink};color:${C.paper};font-family:${BODY};font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:14px 26px;border-radius:999px">Find your first musical</a>
+        </td></tr>
+        <tr><td style="padding:20px 28px 4px">${para("And if you ever want a recommendation, just hit reply. I read everything.")}</td></tr>
+        <tr><td style="padding:0 28px 30px"><img src="${SITE}/email/sig.png" width="155" alt="xo, Emiliya" style="display:block;width:155px;height:auto;border:0"></td></tr>
+      </table>
+    </td></tr>
+    <tr><td><img src="${SITE}/email/scallops-sage.png" width="600" alt="" style="display:block;width:100%;max-width:600px;height:auto;border:0"></td></tr>
+    <tr><td style="background:${C.sage};padding:18px 24px 26px;text-align:center;font-family:${BODY};font-size:13px;line-height:1.6;color:${C.ink}">
+      <a href="${SITE}" style="color:${C.ink};font-weight:800;text-decoration:none">theticketstubdiaries.com</a><br>
+      You're getting this because you signed up on the website.
+    </td></tr>
+  </table>
+</td></tr>
+</table>
+</body></html>`;
   return { html, text };
 }

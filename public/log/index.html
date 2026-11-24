@@ -285,8 +285,11 @@ legend small { display: block; font-family: var(--font-body); color: var(--rose-
 .contact-form .btn { justify-self: start; }
 
 /* About */
-.about { max-width: 64ch; }
+.about { background: var(--paper); border-radius: 22px; padding: 28px; }
+.about .page-head { padding-top: 4px; }
 .about p { font-size: 1.05rem; }
+.about .lede { color: var(--ink); max-width: none; margin-top: 18px; }
+@media (min-width: 760px) { .about { padding: 44px 56px; } .about p { font-size: 1.1rem; } }
 .about .sign { font-family: var(--font-hand); font-size: 2rem; color: var(--rose); margin-top: 8px; }
 
 /* Footer */
