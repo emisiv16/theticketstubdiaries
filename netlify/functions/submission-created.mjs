@@ -156,11 +156,11 @@ function welcomeEmail(lists, lang = "en") {
   const html = `<!DOCTYPE html>
 <html lang="${lang}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="light dark"><meta name="supported-color-schemes" content="light dark">
+<meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light only">
 <style>
-  /* Dark mode: dark surround, but the card stays light with dark text (Emiliya's choice, 24 Nov 2026); pink button */
+  /* Dark mode: Emiliya wants it to look exactly like the light version (24 Nov 2026), so every override repeats the light colours */
   @media (prefers-color-scheme: dark) {
-    .bg-outer { background:#1F2731 !important; }
+    .bg-outer { background:#FFF7E6 !important; }
     .bg-card { background:#FFFDF8 !important; }
     .t-main { color:#2D3A47 !important; }
     .t-eyebrow { color:#B46A72 !important; }
@@ -169,11 +169,11 @@ function welcomeEmail(lists, lang = "en") {
     .bg-sage { background:#E7ECD9 !important; }
     .t-ink { color:#2D3A47 !important; }
     .t-link { color:#8E4752 !important; }
-    .btn { background:#F7C8D3 !important; color:#2D3A47 !important; }
+    .btn { background:#2D3A47 !important; color:#FFFDF8 !important; }
     .bg-foot { background:#A8B58A !important; }
   }
   /* Outlook.com and Outlook apps */
-  [data-ogsb] .bg-outer { background:#1F2731 !important; }
+  [data-ogsb] .bg-outer { background:#FFF7E6 !important; }
   [data-ogsb] .bg-card { background:#FFFDF8 !important; }
   [data-ogsc] .t-main { color:#2D3A47 !important; }
   [data-ogsc] .t-eyebrow { color:#B46A72 !important; }
@@ -182,9 +182,9 @@ function welcomeEmail(lists, lang = "en") {
   [data-ogsb] .bg-sage { background:#E7ECD9 !important; }
   [data-ogsc] .t-ink { color:#2D3A47 !important; }
   [data-ogsc] .t-link { color:#8E4752 !important; }
-  [data-ogsb] .btn { background:#F7C8D3 !important; }
+  [data-ogsb] .btn { background:#2D3A47 !important; }
   [data-ogsb] .bg-foot { background:#A8B58A !important; }
-  [data-ogsc] .btn { color:#2D3A47 !important; }
+  [data-ogsc] .btn { color:#FFFDF8 !important; }
 </style>
 <title>${L.title}</title>
 <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
@@ -199,7 +199,7 @@ function welcomeEmail(lists, lang = "en") {
       <table class="bg-card" role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${C.paper};border-radius:22px">
         <tr><td style="padding:32px 28px 12px">
           ${L.eyebrow ? `<p class="t-eyebrow" style="margin:0 0 6px;font-family:${BODY};font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:${C.rose}">${L.eyebrow}</p>` : ""}
-          <h1 class="t-main" style="margin:0 0 20px;font-family:${HEAD};font-weight:400;font-size:28px;line-height:1.2;color:${C.ink}">${L.title}</h1>
+          <h1 class="t-main" style="margin:0 0 20px;font-family:${HEAD};font-weight:400;font-size:28px;line-height:1.2;color:${C.ink}">${L.title} 🎟️</h1>
           ${para(L.hi)}
           ${para(L.thanks)}
           ${para(intro)}
