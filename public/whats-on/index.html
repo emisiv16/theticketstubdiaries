@@ -270,6 +270,11 @@ legend small { display: block; font-family: var(--font-body); color: var(--rose-
 .nl-form { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .nl-form input[type=email] { flex: 1 1 240px; max-width: 360px; }
 .nl-choices { flex-basis: 100%; border: 0; padding: 0; margin: 0 0 4px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; }
+.nl-lang { flex-basis: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; font-weight: 700; font-size: 0.95rem; }
+.nl-lang span { white-space: nowrap; }
+.ns-form .nl-lang select { width: auto; flex: 0 0 auto; min-width: 0; }
+.nl-lang select { font: inherit; font-weight: 700; padding: 6px 12px; border-radius: 999px; border: 2px solid var(--ink); background: var(--paper); color: var(--ink); }
+.nl-pop .nl-lang { justify-content: flex-start; }
 .nl-choices label { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; cursor: pointer; }
 .ns-form .nl-choices input { width: 20px; height: 20px; accent-color: var(--ink); padding: 0; }
 .ns-form input, .ns-form select, .ns-form textarea { background: var(--paper); color: var(--ink); border: 2px solid var(--sky); border-radius: 14px; font: 600 1rem var(--font-body); padding: 11px 14px; width: 100%; }
@@ -359,7 +364,7 @@ footer .scallops { background: radial-gradient(circle at 14px 18px, var(--sage) 
     <symbol id="d-ticket" viewBox="0 0 80 48"><path d="M6 6 H74 V18 a6 6 0 0 0 0 12 V42 H6 V30 a6 6 0 0 0 0 -12Z"></path><path d="M56 8 V40" stroke-dasharray="3 5"></path><path d="M16 18 H44 M16 26 H38 M16 34 H30"></path></symbol>
     <symbol id="d-curtain" viewBox="0 0 64 64"><path d="M4 8 H60"></path><path d="M6 8 q2 30 -2 50 h14 q-8 -20 10 -34 q-10 -6 -10 -16"></path><path d="M58 8 q-2 30 2 50 h-14 q8 -20 -10 -34 q10 -6 10 -16"></path><path d="M4 8 q7 8 14 0 q7 8 14 0 q7 8 14 0 q7 8 14 0"></path></symbol>
     <symbol id="d-squiggle" viewBox="0 0 120 40"><path d="M4 20 q12 -18 24 0 t24 0 t24 0 t24 0 t16 -6"></path></symbol>
-    <symbol id="d-mic" viewBox="0 0 64 64"><rect x="22" y="6" width="20" height="30" rx="10"></rect><path d="M14 30 q0 14 18 14 q18 0 18 -14 M32 44 V58 M22 58 H42"></path></symbol>
+    <symbol id="d-mic" viewBox="0 0 64 64"><rect x="22" y="6" width="20" height="30" rx="10"></rect><path fill="none" d="M14 30 q0 14 18 14 q18 0 18 -14 M32 44 V58 M22 58 H42"></path></symbol>
   </defs>
 </svg>
 
@@ -865,6 +870,9 @@ footer .scallops { background: radial-gradient(circle at 14px 18px, var(--sage) 
       <label><input type="checkbox" name="monthly-roundup" value="yes" checked=""> <span data-t="nlMonthly">Monthly theatre roundup</span></label>
       <label><input type="checkbox" name="new-reviews" value="yes" checked=""> <span data-t="nlReviews">New reviews as they're posted</span></label>
     </fieldset>
+    <label class="nl-lang"><span data-t="nlLang">Emails in</span>
+      <select name="email-language"><option value="en">English</option><option value="es">Español</option><option value="ru">Русский</option></select>
+    </label>
     <label class="visually-hidden" for="pop-email" data-t="fEmail">Email</label>
     <input id="pop-email" type="email" name="email" required="" autocomplete="email" data-tp="fEmailPh" placeholder="Your email address">
     <button class="btn" type="submit" data-t="nlBtn">Sign me up</button>
@@ -1163,7 +1171,7 @@ const T = {
     finalPerf: d => `Final performance ${d}`, closesIn: m => `Closes ${m}`, until: d => `Until ${d}`, from: d => `From ${d}`, openRun: "Open run",
     starring: "Starring", finalWeek: "Final week", seenIt: "I've seen it", onMyList: "On my list",
     noneClosing: "Nothing closing in the next two months.", noneSoon: "Nothing announced yet.",
-    navContact: "Contact", nlHead: "Get the Ticket Stub Diaries in your inbox", nlText: "Pick what you'd like: a monthly London theatre roundup (which shows are closing so you can catch them in time, what's opening, cast changes and big-name castings), a note whenever I post a new review, or both. No spam, and you can unsubscribe any time.", nlChoose: "Choose your emails", nlMonthly: "Monthly theatre roundup", nlReviews: "New reviews as they're posted", nlPickOne: "Pick at least one of the two emails.", nlBtn: "Sign me up", fEmailPh: "Your email address",
+    navContact: "Contact", nlHead: "Get the Ticket Stub Diaries in your inbox", nlText: "Pick what you'd like: a monthly London theatre roundup (which shows are closing so you can catch them in time, what's opening, cast changes and big-name castings), a note whenever I post a new review, or both. No spam, and you can unsubscribe any time.", nlChoose: "Choose your emails", nlLang: "Emails in", nlMonthly: "Monthly theatre roundup", nlReviews: "New reviews as they're posted", nlPickOne: "Pick at least one of the two emails.", nlBtn: "Sign me up", fEmailPh: "Your email address",
     nlThanks: "You're on the list! Thank you.", nlHand: "Don't miss a show!", popHead: "Don't miss a show!", popText: "Every month I'll tell you which London shows are closing (so you can catch them in time), what's opening and any big cast news. Plus my new reviews, if you like.", popLater: "No thanks", popClose: "Close", ctEyebrow: "Contact", ctHead: "Say hello", ctIntro: "Questions, recommendation requests, or press and PR invitations: I'd love to hear from you.",
     fName: "Your name", fEmail: "Email", fReason: "What's it about?", fMessage: "Message", rGeneral: "A general question", rPick: "Help me pick a show", rPress: "Press and PR invitations", rOther: "Something else",
     ctPrivacy: "I'll only use your details to reply to you.", ctBtn: "Send message", ctThanks: "Thank you! Your message is on its way and I'll reply soon.",
@@ -1213,7 +1221,7 @@ const T = {
     finalPerf: d => `Última función: ${d}`, closesIn: m => `Termina en ${m}`, until: d => `Hasta el ${d}`, from: d => `Desde el ${d}`, openRun: "Sin fecha de cierre",
     starring: "Con", finalWeek: "Última semana", seenIt: "Ya lo he visto", onMyList: "En mi lista",
     noneClosing: "Nada termina en los próximos dos meses.", noneSoon: "Todavía no hay nada anunciado.",
-    navContact: "Contacto", nlHead: "Recibe The Ticket Stub Diaries en tu correo", nlText: "Elige lo que quieras: un resumen mensual del teatro en Londres (qué obras cierran para que llegues a tiempo, estrenos, cambios de reparto y fichajes estrella), un aviso cada vez que publique una reseña, o ambos. Sin spam, y puedes darte de baja cuando quieras.", nlChoose: "Elige tus correos", nlMonthly: "Resumen mensual de teatro", nlReviews: "Nuevas reseñas cuando las publique", nlPickOne: "Elige al menos uno de los dos correos.", nlBtn: "Apúntame", fEmailPh: "Tu correo electrónico",
+    navContact: "Contacto", nlHead: "Recibe The Ticket Stub Diaries en tu correo", nlText: "Elige lo que quieras: un resumen mensual del teatro en Londres (qué obras cierran para que llegues a tiempo, estrenos, cambios de reparto y fichajes estrella), un aviso cada vez que publique una reseña, o ambos. Sin spam, y puedes darte de baja cuando quieras.", nlChoose: "Elige tus correos", nlLang: "Correos en", nlMonthly: "Resumen mensual de teatro (de momento, en inglés)", nlReviews: "Nuevas reseñas cuando las publique (de momento, en inglés)", nlPickOne: "Elige al menos uno de los dos correos.", nlBtn: "Apúntame", fEmailPh: "Tu correo electrónico",
     nlThanks: "¡Ya estás en la lista! Gracias.", nlHand: "¡No te pierdas ninguna función!", popHead: "¡No te pierdas ninguna función!", popText: "Cada mes te contaré qué espectáculos de Londres están a punto de cerrar (para que llegues a tiempo), qué se estrena y las grandes noticias de reparto. Y mis nuevas reseñas, si quieres.", popLater: "No, gracias", popClose: "Cerrar", ctEyebrow: "Contacto", ctHead: "Escríbeme", ctIntro: "Preguntas, peticiones de recomendaciones o invitaciones de prensa y relaciones públicas: me encantará saber de ti.",
     fName: "Tu nombre", fEmail: "Correo electrónico", fReason: "¿De qué se trata?", fMessage: "Mensaje", rGeneral: "Una pregunta general", rPick: "Ayúdame a elegir un espectáculo", rPress: "Prensa y relaciones públicas", rOther: "Otra cosa",
     ctPrivacy: "Solo usaré tus datos para responderte.", ctBtn: "Enviar mensaje", ctThanks: "¡Gracias! Tu mensaje está en camino y te responderé pronto.",
@@ -1264,7 +1272,7 @@ const T = {
     finalPerf: d => `Последний показ: ${d}`, closesIn: m => `Закрывается: ${m}`, until: d => `До ${d}`, from: d => `С ${d}`, openRun: "Без даты закрытия",
     starring: "В ролях:", finalWeek: "Последняя неделя", seenIt: "Я видела", onMyList: "В моём списке",
     noneClosing: "В ближайшие два месяца ничего не закрывается.", noneSoon: "Пока ничего не объявлено.",
-    navContact: "Контакты", nlHead: "The Ticket Stub Diaries на вашу почту", nlText: "Выберите, что вам интересно: ежемесячный обзор лондонских театров (какие спектакли скоро закрываются, чтобы вы успели, премьеры, смены состава и звёздные кастинги), письмо о каждой новой рецензии или и то, и другое. Без спама, отписаться можно в любой момент.", nlChoose: "Выберите рассылку", nlMonthly: "Ежемесячный театральный обзор", nlReviews: "Новые рецензии сразу после публикации", nlPickOne: "Выберите хотя бы одну рассылку.", nlBtn: "Подписаться", fEmailPh: "Ваш email",
+    navContact: "Контакты", nlHead: "The Ticket Stub Diaries на вашу почту", nlText: "Выберите, что вам интересно: ежемесячный обзор лондонских театров (какие спектакли скоро закрываются, чтобы вы успели, премьеры, смены состава и звёздные кастинги), письмо о каждой новой рецензии или и то, и другое. Без спама, отписаться можно в любой момент.", nlChoose: "Выберите рассылку", nlLang: "Язык писем", nlMonthly: "Ежемесячный театральный обзор (пока на английском)", nlReviews: "Новые рецензии сразу после публикации (пока на английском)", nlPickOne: "Выберите хотя бы одну рассылку.", nlBtn: "Подписаться", fEmailPh: "Ваш email",
     nlThanks: "Вы в списке! Спасибо.", nlHand: "Не пропустите ни одного спектакля!", popHead: "Не пропустите ни одного спектакля!", popText: "Раз в месяц я рассказываю, какие лондонские спектакли скоро закрываются (чтобы вы успели), какие премьеры впереди и главные новости о составах. И присылаю новые рецензии, если хотите.", popLater: "Нет, спасибо", popClose: "Закрыть", ctEyebrow: "Контакты", ctHead: "Напишите мне", ctIntro: "Вопросы, просьбы что-нибудь посоветовать или приглашения от прессы и PR: буду рада вашему письму.",
     fName: "Ваше имя", fEmail: "Email", fReason: "О чём письмо?", fMessage: "Сообщение", rGeneral: "Общий вопрос", rPick: "Помогите выбрать спектакль", rPress: "Пресса и PR", rOther: "Другое",
     ctPrivacy: "Я использую ваши данные только для ответа вам.", ctBtn: "Отправить", ctThanks: "Спасибо! Сообщение отправлено, я скоро отвечу.",
@@ -1313,6 +1321,7 @@ const T = {
 /* ---------- APP ---------- */
 let lang = "en";
 try { const saved = localStorage.getItem("lang"); if (T[saved]) lang = saved; } catch (e) {}
+try { const q = new URLSearchParams(location.search).get("lang"); if (T[q]) { lang = q; localStorage.setItem("lang", q); } } catch (e) {}
 
 // Each page only contains its own section, so missing elements return a harmless spare element.
 const $ = (s, el = document) => el.querySelector(s) || document.createElement("input");
@@ -1333,6 +1342,7 @@ function applyLang() {
   });
   document.querySelectorAll("[data-tp]").forEach(el => { el.placeholder = t[el.dataset.tp]; });
   document.querySelectorAll("[data-tl]").forEach(el => { el.setAttribute("aria-label", t[el.dataset.tl]); });
+  document.querySelectorAll('select[name="email-language"]').forEach(sel => { if (!sel.dataset.touched) sel.value = lang; });
   document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
   $(".translate-note").hidden = !t.enNote;
   renderLog(); renderWish(); renderWhatsOn(); renderReviews(); renderQuiz(); renderLondonNote(); renderPicks(); renderMoods();
@@ -1629,6 +1639,7 @@ if (!popSeen()) {
   addEventListener("scroll", onScroll, { passive: true });
 }
 
+document.querySelectorAll('select[name="email-language"]').forEach(sel => sel.addEventListener("change", () => { sel.dataset.touched = "1"; }));
 applyLang();
 route();
 </script>
