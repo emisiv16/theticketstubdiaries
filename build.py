@@ -96,6 +96,9 @@ def read_reviews():
         meta["tags"] = [t.strip() for t in meta.get("tags", "").split(",") if t.strip()]
         meta["archive"] = meta.get("archive", "no").lower() in ("yes", "true")
         meta["body"] = markdown.markdown(m.group(2), extensions=["extra", "smarty"])
+        # Photos alternate right/left beside the text on wide screens (see .photo in the template CSS)
+        n = iter(range(1000))
+        meta["body"] = re.sub(r"<p><img ", lambda _: f'<p class="photo photo-{"right" if next(n) % 2 == 0 else "left"}"><img ', meta["body"])
         reviews.append(meta)
     reviews.sort(key=lambda r: r["published"], reverse=True)
     return reviews
