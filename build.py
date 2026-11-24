@@ -114,7 +114,7 @@ def review_section(r):
     <article class="review" lang="en">
       <p><a href="/reviews/">&larr; All reviews</a></p>
       <div class="eyebrow">{kind}</div>
-      <h1>{esc(r["show"])} review</h1>
+      <h1>{esc(r.get("headline") or r["show"] + " review")}</h1>
       <p class="verdict">{esc(r["verdict"])}</p>
       {stars_html(r["rating"])}
       <div class="review-facts">{facts_html}</div>
@@ -193,8 +193,11 @@ def build():
 
     for r in reviews:
         path = f"/reviews/{r['slug']}/"
-        title = f"{r['show']} review: {r['verdict']}"
-        if len(title) > 70:
+        photos = ROOT / "content/reviews" / r["slug"]  # optional folder of photos for this review
+        if photos.is_dir():
+            shutil.copytree(photos, OUT / "reviews" / r["slug"], dirs_exist_ok=True)
+        title = r.get("seo_title") or f"{r['show']} review: {r['verdict']}"
+        if len(title) > 70 and not r.get("seo_title"):
             title = f"{r['show']} review ({r.get('city', 'London')}) | {BRAND}"
         desc = r.get("description") or f"{r['show']} at {r['venue']} reviewed: {r['verdict']} Rated {r['rating']:g}/5, with the best seats and who it's for."
         review_ld = {"@type": "Review", "name": f"{r['show']} review", "headline": title, "author": AUTHOR,
