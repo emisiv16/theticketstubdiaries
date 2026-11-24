@@ -158,30 +158,32 @@ function welcomeEmail(lists, lang = "en") {
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark"><meta name="supported-color-schemes" content="light dark">
 <style>
-  /* Our own dark mode, so apps that support it use these colours instead of auto-darkening the email */
+  /* Dark mode: dark surround, but the card stays light with dark text (Emiliya's choice, 24 Nov 2026); pink button */
   @media (prefers-color-scheme: dark) {
     .bg-outer { background:#1F2731 !important; }
-    .bg-card { background:#2D3A47 !important; }
-    .t-main { color:#FFF7E6 !important; }
-    .t-eyebrow { color:#F7C8D3 !important; }
+    .bg-card { background:#FFFDF8 !important; }
+    .t-main { color:#2D3A47 !important; }
+    .t-eyebrow { color:#B46A72 !important; }
     .bg-butter { background:#F6E3A1 !important; }
     .bg-blush { background:#F7C8D3 !important; }
-    .bg-sage { background:#A8B58A !important; }
+    .bg-sage { background:#E7ECD9 !important; }
     .t-ink { color:#2D3A47 !important; }
-    .t-link { color:#6E2F3A !important; }
+    .t-link { color:#8E4752 !important; }
     .btn { background:#F7C8D3 !important; color:#2D3A47 !important; }
+    .bg-foot { background:#A8B58A !important; }
   }
   /* Outlook.com and Outlook apps */
   [data-ogsb] .bg-outer { background:#1F2731 !important; }
-  [data-ogsb] .bg-card { background:#2D3A47 !important; }
-  [data-ogsc] .t-main { color:#FFF7E6 !important; }
-  [data-ogsc] .t-eyebrow { color:#F7C8D3 !important; }
+  [data-ogsb] .bg-card { background:#FFFDF8 !important; }
+  [data-ogsc] .t-main { color:#2D3A47 !important; }
+  [data-ogsc] .t-eyebrow { color:#B46A72 !important; }
   [data-ogsb] .bg-butter { background:#F6E3A1 !important; }
   [data-ogsb] .bg-blush { background:#F7C8D3 !important; }
-  [data-ogsb] .bg-sage { background:#A8B58A !important; }
+  [data-ogsb] .bg-sage { background:#E7ECD9 !important; }
   [data-ogsc] .t-ink { color:#2D3A47 !important; }
-  [data-ogsc] .t-link { color:#6E2F3A !important; }
+  [data-ogsc] .t-link { color:#8E4752 !important; }
   [data-ogsb] .btn { background:#F7C8D3 !important; }
+  [data-ogsb] .bg-foot { background:#A8B58A !important; }
   [data-ogsc] .btn { color:#2D3A47 !important; }
 </style>
 <title>${L.title}</title>
@@ -221,7 +223,7 @@ function welcomeEmail(lists, lang = "en") {
       </table>
     </td></tr>
     <tr><td><img src="${SITE}/email/scallops-sage.png?v=2" width="600" alt="" style="display:block;width:100%;max-width:600px;height:auto;border:0"></td></tr>
-    <tr><td class="bg-sage t-ink" style="background:${C.sage};padding:18px 24px 26px;text-align:center;font-family:${BODY};font-size:13px;line-height:1.6;color:${C.ink}">
+    <tr><td class="bg-foot t-ink" style="background:${C.sage};padding:18px 24px 26px;text-align:center;font-family:${BODY};font-size:13px;line-height:1.6;color:${C.ink}">
       <a class="t-ink" href="${SITE}" style="color:${C.ink};font-weight:800;text-decoration:none">theticketstubdiaries.com</a><br>
       ${L.footer}
     </td></tr>
