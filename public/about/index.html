@@ -123,6 +123,27 @@ section[data-view].on { display: block; }
 
 .home-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 22px; margin-top: 48px; align-items: start; }
 .panel { background: var(--paper); border-radius: 22px; padding: 24px; position: relative; }
+/* Kind words (reader messages, approved by Emiliya) */
+.kw-block { margin-top: 26px; }
+.kw-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.kw-head h2 { font-size: 1.6rem; }
+.kw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+.kw-card { --c: var(--blush); margin: 0; background: var(--c); border-radius: 18px; padding: 20px 20px 16px 22px; border-left: 4px dashed var(--paper); position: relative; display: flex; flex-direction: column; gap: 10px; }
+.kw-card:nth-child(4n+2) { --c: var(--butter); }
+.kw-card:nth-child(4n+3) { --c: var(--sky-soft); }
+.kw-card:nth-child(4n+4) { --c: #E7ECD9; }
+.kw-card blockquote { margin: 0; font-size: 1.02rem; line-height: 1.55; color: var(--ink); }
+.kw-card blockquote::before { content: "\201C"; font-family: var(--font-display); font-size: 2.6rem; line-height: 0; vertical-align: -0.45em; margin-right: 4px; color: var(--rose); }
+.kw-card figcaption { font-weight: 800; font-size: 0.92rem; color: var(--ink); }
+.kw-card figcaption span { display: block; font-weight: 600; color: var(--ink-soft); font-size: 0.85rem; }
+.kw-card .chip { align-self: flex-start; background: var(--paper); }
+.kw-empty { color: var(--ink-soft); font-style: italic; }
+.kw-invite { margin: 18px 0 0; font-weight: 700; }
+.kw-form { margin-top: 30px; }
+.kw-form .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 560px) { .kw-form .field-row { grid-template-columns: 1fr; } }
+.kw-form .consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 700; margin: 6px 0 14px; }
+.ns-form .consent input { width: 20px; height: 20px; flex: 0 0 auto; accent-color: var(--ink); padding: 0; margin-top: 3px; }
 .panel h2 { font-size: 1.6rem; margin-bottom: 10px; }
 .panel p { color: var(--ink-soft); margin: 0 0 16px; }
 .curve { display: block; width: 150px; height: 46px; margin: -6px auto 2px; }
@@ -409,6 +430,8 @@ footer .scallops { background: radial-gradient(circle at 14px 18px, var(--sage) 
 
   <!-- QUIZ -->
 
+  <!-- KIND WORDS -->
+
   <!-- CONTACT -->
 
   <!-- ABOUT -->
@@ -435,7 +458,7 @@ footer .scallops { background: radial-gradient(circle at 14px 18px, var(--sage) 
   <div class="wrap foot">
     <div>
       <div class="sign">xo, Emiliya</div>
-      <p><a href="/contact/" data-t="navContact">Contact</a></p>
+      <p><a href="/contact/" data-t="navContact">Contact</a><span id="kw-foot" hidden=""> · <a href="/kind-words/" data-t="kwHead">Kind words</a></span></p>
       <p data-t="footer">All reviews are my own opinions. I pay for my tickets unless a review says otherwise.</p>
     </div>
     <div class="dl" aria-hidden="true">
@@ -509,6 +532,8 @@ const LOG = [
 
 // Reviews. Real reviews get added here with their own page.
 const REVIEWS = [{"id": "operation-mincemeat", "title": "Operation Mincemeat", "meta": "Hilarious, clever and kind, with one song that will absolutely get you. Honestly, just the best time.", "rating": 5.0}];
+// Reader messages Emiliya has approved (content/kind-words.json, injected by build.py), newest first
+const KIND_WORDS = [];
 
 // Quiz and mood lists: shows from the Log that I'd recommend.
 // mood: laugh | cry | both   music: pop | classic | modern   kids: true/false   scale: big | intimate | mid
@@ -756,6 +781,7 @@ const PICK = Object.fromEntries(PICKS.map(p => [p.name, p]));
 /* ---------- TRANSLATIONS ---------- */
 const T = {
   en: {
+    kwHead: "Kind words", kwAll: "Read them all", kwEyebrow: "From readers", kwIntro: "Real messages from people who took one of my recommendations, did the quiz or read a review. Saw something because of me? I'd love to hear how it went.", kwEmpty: "No kind words yet. Be the first!", kwInvite: "Went to see one of these? Tell me how it went!", kwFormHead: "Share your kind words", kwFormIntro: "Only you and I can see this until I approve it. I only publish your first name and city, never your email.", kwName: "First name", kwCity: "City", kwEmail: "Email (optional, so I can say thank you)", kwShow: "Which show did you see?", kwVia: "How did you pick it?", viaQuiz: "I took the quiz", viaReview: "I read your review", viaPersonal: "You recommended it to me", viaOther: "Something else", kwRating: "Your rating (optional)", kwNoRating: "No rating", kwMessage: "Your message", kwConsent: "I'm happy for this to appear on The Ticket Stub Diaries with my first name and city.", kwBtn: "Send", kwThanks: "Thank you! I read every single one.", kwReviewHead: "Kind words about this show", via: { quiz: "Found it with the quiz", review: "Read the review", personal: "Emiliya's recommendation" },
     area: { WE: "West End", OW: "Off-West End" }, navWhatsOn: "What's on", woTitle: "What's on in London theatre", woEyebrow: "London theatre", woIntro: "What's on in London theatre right now: West End shows closing soon, what's playing, and new musicals and plays opening next.",
     woChecked: d => `Last checked ${d}. Dates and casts change, so check the theatre's website before booking.`,
     closingHead: "Closing soon", onHead: "On now", soonHead: "Opening soon",
@@ -806,6 +832,7 @@ const T = {
     footer: "All reviews are my own opinions. I pay for my tickets unless a review says otherwise."
   },
   es: {
+    kwHead: "Palabras bonitas", kwAll: "Verlas todas", kwEyebrow: "De los lectores", kwIntro: "Mensajes reales de personas que siguieron una de mis recomendaciones, hicieron el test o leyeron una reseña. ¿Viste algo gracias a mí? Me encantaría saber qué tal te fue.", kwEmpty: "Todavía no hay mensajes. ¡Anímate a ser la primera persona!", kwInvite: "¿Fuiste a ver alguno de estos? ¡Cuéntame qué tal!", kwFormHead: "Comparte tu experiencia", kwFormIntro: "Solo tú y yo lo vemos hasta que lo apruebe. Solo publico tu nombre y tu ciudad, nunca tu correo.", kwName: "Nombre", kwCity: "Ciudad", kwEmail: "Correo (opcional, para poder darte las gracias)", kwShow: "¿Qué espectáculo viste?", kwVia: "¿Cómo lo elegiste?", viaQuiz: "Hice el test", viaReview: "Leí tu reseña", viaPersonal: "Me lo recomendaste tú", viaOther: "Otra cosa", kwRating: "Tu nota (opcional)", kwNoRating: "Sin nota", kwMessage: "Tu mensaje", kwConsent: "Acepto que esto aparezca en The Ticket Stub Diaries con mi nombre y mi ciudad.", kwBtn: "Enviar", kwThanks: "¡Gracias! Leo todos y cada uno.", kwReviewHead: "Lo que dicen de este espectáculo", via: { quiz: "Lo encontró con el test", review: "Leyó la reseña", personal: "Recomendación de Emiliya" },
     area: { WE: "West End", OW: "Off-West End" }, navWhatsOn: "En cartel", woTitle: "Qué ver en los teatros de Londres", woEyebrow: "Teatro en Londres", woIntro: "Qué se puede ver en Londres ahora mismo: lo que se despide pronto, lo que está en cartel y lo que está por llegar.",
     woChecked: d => `Última revisión: ${d}. Las fechas y los repartos cambian, así que consulta la web del teatro antes de comprar.`,
     closingHead: "Últimas funciones", onHead: "En cartel ahora", soonHead: "Próximos estrenos",
@@ -857,6 +884,7 @@ const T = {
     footer: "Todas las reseñas son mi opinión personal. Pago mis entradas salvo que la reseña diga lo contrario."
   },
   ru: {
+    kwHead: "Добрые слова", kwAll: "Читать все", kwEyebrow: "От читателей", kwIntro: "Настоящие отзывы людей, которые воспользовались моим советом, прошли тест или прочитали рецензию. Посмотрели что-то благодаря мне? Расскажите, как всё прошло!", kwEmpty: "Пока отзывов нет. Будьте первыми!", kwInvite: "Сходили на один из этих спектаклей? Расскажите, как всё прошло!", kwFormHead: "Поделитесь впечатлениями", kwFormIntro: "Пока я не одобрю отзыв, его видим только мы с вами. Я публикую только имя и город, но никогда не email.", kwName: "Имя", kwCity: "Город", kwEmail: "Email (по желанию, чтобы я могла сказать спасибо)", kwShow: "Какой спектакль вы посмотрели?", kwVia: "Как вы его выбрали?", viaQuiz: "С помощью теста", viaReview: "По вашей рецензии", viaPersonal: "Вы мне посоветовали", viaOther: "Другое", kwRating: "Ваша оценка (по желанию)", kwNoRating: "Без оценки", kwMessage: "Ваше сообщение", kwConsent: "Я согласен(на), чтобы это появилось на The Ticket Stub Diaries с моим именем и городом.", kwBtn: "Отправить", kwThanks: "Спасибо! Я читаю каждый отзыв.", kwReviewHead: "Отзывы об этом спектакле", via: { quiz: "Выбор с помощью теста", review: "По рецензии", personal: "По совету Эмилии" },
     area: { WE: "Вест-Энд", OW: "Офф-Вест-Энд" }, navWhatsOn: "Афиша", woTitle: "Что идёт в театрах Лондона", woEyebrow: "Театры Лондона", woIntro: "Что идёт в Лондоне прямо сейчас: какие спектакли скоро закрываются, что в репертуаре и какие премьеры впереди.",
     woChecked: d => `Последняя проверка: ${d}. Даты и составы меняются, поэтому перед покупкой проверьте сайт театра.`,
     closingHead: "Скоро закрываются", onHead: "Идут сейчас", soonHead: "Скоро премьера",
@@ -936,6 +964,7 @@ function applyLang() {
   document.querySelectorAll('select[name="email-language"]').forEach(sel => { if (!sel.dataset.touched) sel.value = lang; });
   document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
   $(".translate-note").hidden = !t.enNote;
+  renderKind();
   renderLog(); renderWish(); renderWhatsOn(); renderReviews(); renderQuiz(); renderLondonNote(); renderPicks(); renderMoods();
   $("#results").hidden = true;
 }
@@ -983,6 +1012,36 @@ function noteText(n) {
 }
 // Russian plurals: 1 раз, 2 раза, 5 раз
 const ruPlural = (n, one, few, many) => { const a = n % 10, b = n % 100; return a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many; };
+
+function kwCard(k) {
+  const t = T[lang];
+  const via = k.via && t.via[k.via] ? `<span class="chip">${esc(t.via[k.via])}</span>` : "";
+  return `<figure class="kw-card">
+    ${k.rating ? stars(k.rating) : ""}
+    <blockquote lang="${esc(k.lang || "en")}">${esc(k.message)}</blockquote>
+    <figcaption>${esc(k.name)}${k.city ? ", " + esc(k.city) : ""}<span>${esc(k.show)}</span></figcaption>
+    ${via}
+  </figure>`;
+}
+function renderKind() {
+  const fill = (block, list, items) => { $(list).innerHTML = items.map(kwCard).join(""); $(block).hidden = !items.length; };
+  fill("#kw-home", "#kw-home-list", KIND_WORDS.slice(0, 3));
+  fill("#kw-start", "#kw-start-list", KIND_WORDS.slice(0, 3));
+  $("#kw-all").innerHTML = KIND_WORDS.map(kwCard).join("");
+  // Until the first message is approved, nothing about Kind words shows anywhere except the form itself
+  const none = !KIND_WORDS.length;
+  $("#kw-empty").hidden = true;
+  $("#kw-intro").hidden = none;
+  $("#kw-all").hidden = none;
+  $("#kw-foot").hidden = none;
+  const rv = document.querySelector("#kw-review");
+  if (rv) {
+    const mine = KIND_WORDS.filter(k => k.review && k.review === rv.dataset.review);
+    rv.querySelector(".kw-grid").innerHTML = mine.map(kwCard).join("");
+    rv.querySelector("h2").textContent = T[lang].kwReviewHead;
+    rv.hidden = !mine.length;
+  }
+}
 
 function renderLog() {
   const t = T[lang];
@@ -1193,12 +1252,12 @@ document.querySelectorAll("form.ns-form").forEach(f => f.addEventListener("submi
     const r = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(f)).toString() });
     if (!r.ok) throw new Error(r.status);
     f.reset();
-    msg.textContent = f.name === "newsletter" ? t.nlThanks : t.ctThanks; msg.className = "form-msg ok";
+    msg.textContent = f.name === "newsletter" ? t.nlThanks : f.name === "kind-words" ? t.kwThanks : t.ctThanks; msg.className = "form-msg ok";
     if (f.name === "newsletter") {
       try { localStorage.setItem("nlPop", "signed"); } catch (e2) {}
       trackEvent(f.closest("#nl-pop") ? "newsletter-signup-popup" : "newsletter-signup-home");
       if (f.closest("#nl-pop")) setTimeout(closePop, 2200);
-    } else trackEvent("contact-message");
+    } else trackEvent(f.name === "kind-words" ? "kind-words-sent" : "contact-message");
   } catch (err) {
     msg.textContent = t.formError; msg.className = "form-msg err";
   } finally { btn.disabled = false; }

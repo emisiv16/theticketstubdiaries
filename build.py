@@ -47,13 +47,16 @@ PAGES = [
     ("about", "/about/",
      "About Emiliya | The Ticket Stub Diaries",
      "I'm Emiliya: a trained dancer and actor with a BA in filmmaking and over 100 theatre performances behind me, reviewing London musicals and plays."),
+    ("kind-words", "/kind-words/",
+     "Kind Words from Readers | The Ticket Stub Diaries",
+     "Real messages from readers who saw a London musical or play after taking Emiliya's recommendation, the quiz or a review. Share your own."),
     ("contact", "/contact/",
      "Contact and Press Invitations | The Ticket Stub Diaries",
      "Get in touch with The Ticket Stub Diaries: questions, show recommendations, and press night and PR invitations for London theatre."),
 ]
 NOINDEX = {"review-template", "notfound"}
 CRUMB = {"reviews": "Reviews", "whats-on": "What's on", "start": "Where do I start?", "log": "The Log",
-         "about": "About", "contact": "Contact"}
+         "about": "About", "contact": "Contact", "kind-words": "Kind words"}
 
 NOT_FOUND = """  <section data-view="notfound">
     <div class="page-head">
@@ -120,6 +123,7 @@ def review_section(r):
       <div class="review-facts">{facts_html}</div>
       {r["body"]}
       {f'<p style="margin-top:20px">{chips}</p>' if chips else ""}
+      <div class="kw-block" id="kw-review" data-review="{esc(r["slug"])}" hidden><div class="kw-head"><h2>Kind words about this show</h2></div><div class="kw-grid"></div></div>
       <p class="sign">xo, Emiliya</p>
     </article>
   </section>"""
@@ -134,6 +138,9 @@ def jsonld(graph):
     return ('<script type="application/ld+json">'
             + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
             + "</script>")
+
+
+KIND_JS = "[]"
 
 
 def render(tpl, *, page, path, title, desc, section_html=None, og_type="website", ld=None, reviews_js="[]"):
@@ -153,7 +160,7 @@ def render(tpl, *, page, path, title, desc, section_html=None, og_type="website"
            "{{JSONLD}}": jsonld(ld) if ld else ""}
     for k, v in rep.items():
         s = s.replace(k, v)
-    s = s.replace("/*REVIEWS*/[]/*END_REVIEWS*/", reviews_js)
+    s = s.replace("/*REVIEWS*/[]/*END_REVIEWS*/", reviews_js).replace("/*KIND*/[]/*END_KIND*/", KIND_JS)
     assert "{{" not in s, re.findall(r"\{\{\w+\}\}", s)
     return s
 
@@ -172,6 +179,12 @@ def build():
     reviews = read_reviews()
     cards = [{"id": r["slug"], "title": r["show"], "meta": r.get("meta") or r["verdict"], "rating": r["rating"]} for r in reviews]
     reviews_js = json.dumps(cards, ensure_ascii=False)
+    kind = json.loads((ROOT / "content/kind-words.json").read_text(encoding="utf-8"))
+    kind.sort(key=lambda k: k.get("date", ""), reverse=True)
+    global KIND_JS
+    KIND_JS = json.dumps(kind, ensure_ascii=False)
+    if not kind:
+        NOINDEX.add("kind-words")
 
     if OUT.exists():
         shutil.rmtree(OUT)
