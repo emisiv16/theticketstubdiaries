@@ -46,7 +46,7 @@ PAGES = [
      "The Log: every musical and play I've seen since I was about 10, in London's West End, Manchester, Madrid, Moscow and New York, and how many times."),
     ("about", "/about/",
      "About Emiliya | The Ticket Stub Diaries",
-     "I'm Emiliya: a trained dancer and actor who has seen over 100 theatre performances, writing honest reviews of London musicals and plays in English, Spanish and Russian."),
+     "I'm Emiliya: a trained dancer and actor with a BA in filmmaking and over 100 theatre performances behind me, reviewing London musicals and plays."),
     ("contact", "/contact/",
      "Contact and Press Invitations | The Ticket Stub Diaries",
      "Get in touch with The Ticket Stub Diaries: questions, show recommendations, and press night and PR invitations for London theatre."),
